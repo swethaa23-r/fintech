@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stackly - Sign Up</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        darkSection: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans h-screen flex flex-col lg:flex-row overflow-hidden">
+        
+    <!-- LEFT: Promotional Panel -->
+    <div class="hidden lg:flex w-1/2 bg-darkSection text-white p-12 flex-col justify-between relative overflow-hidden h-full">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer z-10" onclick="window.location.href='index.html'">
+            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                <span class="font-bold">S</span>
+            </div>
+            stackly
+        </div>
+        
+        <!-- Content -->
+        <div class="z-10 max-w-lg mt-10">
+            <h1 class="text-5xl font-bold leading-tight mb-6" data-aos="fade-up">Start your journey to smarter finance</h1>
+            <p class="text-gray-400 text-lg leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="100">
+                Join thousands of users who have taken control of their financial future. Create your free account and access powerful tools today.
+            </p>
+            
+            <!-- Financial Visual -->
+            <div class="relative w-full h-64 mt-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute top-0 left-0 bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 w-64 animate-float shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-300 text-xs mb-1">Projected Growth</p>
+                            <h3 class="text-2xl font-bold text-white">+24.8%</h3>
+                        </div>
+                        <div class="w-8 h-8 bg-brandGreen/20 rounded-full flex items-center justify-center text-brandGreen">
+                            <i class="fa-solid fa-chart-line text-sm"></i>
+                        </div>
+                    </div>
+                    <svg class="w-full h-12" viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 25 Q20 5 40 20 T80 10 T100 5" stroke="#00E58F" stroke-width="2" fill="none"/></svg>
+                </div>
+                
+                <div class="absolute bottom-4 right-10 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 w-48 animate-float-delayed shadow-xl">
+                    <p class="text-gray-300 text-xs mb-2">Secure Platform</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-shield-halved text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Bank-grade</h4>
+                            <p class="text-gray-400 text-[10px]">Encryption</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative background elements -->
+        <div class="absolute top-1/4 right-0 w-96 h-96 bg-brandGreen/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-brandOrange/10 rounded-full blur-3xl pointer-events-none"></div>
+    </div>
+
+    <!-- RIGHT: Signup Form -->
+    <div class="w-full lg:w-1/2 h-full flex flex-col p-8 bg-white overflow-y-auto">
+        <div class="w-full max-w-md m-auto flex flex-col justify-center py-10" data-aos="fade-in">
+            <!-- Mobile Header -->
+            <header class="lg:hidden sticky top-0 z-[60] bg-white/95 backdrop-blur-md pb-4 pt-2 mb-8 -mt-6 -mx-8 px-8 shadow-sm">
+                <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                        <span class="font-bold">S</span>
+                    </div>
+                    stackly
+                </div>
+            </header>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Create Account</h2>
+            <p class="text-gray-500 mb-8">Sign up to get started with Stackly.</p>
+
+            <form id="signup-form" class="space-y-4" onsubmit="handleSignup(event)" novalidate>
+                
+                <!-- Full Name -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Full Name</label>
+                    <input type="text" id="fullname" placeholder="John Doe" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                    <p id="err-fullname" class="text-red-500 text-xs mt-1 hidden"></p>
+                </div>
+                
+                <!-- Email -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                    <p id="err-email" class="text-red-500 text-xs mt-1 hidden"></p>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 (555) 000-0000" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                    <p id="err-phone" class="text-red-500 text-xs mt-1 hidden"></p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                        <p id="err-password" class="text-red-500 text-xs mt-1 hidden"></p>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1.5">Confirm Password</label>
+                        <input type="password" id="confirm-password" placeholder="••••••••" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                        <p id="err-confirm" class="text-red-500 text-xs mt-1 hidden"></p>
+                    </div>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="pt-2">
+                    <label class="flex items-start gap-2 cursor-pointer">
+                        <input type="checkbox" id="terms" class="mt-1 w-4 h-4 rounded border-gray-300 text-brandGreen focus:ring-brandGreen accent-brandGreen" required>
+                        <span class="text-sm text-gray-600 font-medium leading-tight">I agree to the <a href="404.html" class="text-brandGreen hover:underline">Terms</a> and <a href="404.html" class="text-brandGreen hover:underline">Privacy Policy</a></span>
+                    </label>
+                    <p id="err-terms" class="text-red-500 text-xs mt-1 hidden"></p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-brandGreen text-white font-bold rounded-xl py-3.5 hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20 mt-4">
+                    Create Account
+                </button>
+                
+                <p class="text-center text-sm text-gray-500 mt-6">
+                    Already have an account? <a href="login.html" class="font-semibold text-brandGreen hover:underline">Login</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

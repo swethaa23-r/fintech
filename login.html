@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stackly - Login</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        darkSection: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans h-screen flex flex-col lg:flex-row overflow-hidden">
+        
+    <!-- LEFT: Promotional Panel -->
+    <div class="hidden lg:flex w-1/2 bg-darkSection text-white p-12 flex-col justify-between relative overflow-hidden h-full">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer z-10" onclick="window.location.href='index.html'">
+            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                <span class="font-bold">S</span>
+            </div>
+            stackly
+        </div>
+        
+        <!-- Content -->
+        <div class="z-10 max-w-lg mt-10">
+            <h1 class="text-5xl font-bold leading-tight mb-6" data-aos="fade-up">Welcome back to smarter finance</h1>
+            <p class="text-gray-400 text-lg leading-relaxed mb-10" data-aos="fade-up" data-aos-delay="100">
+                Access your personalized dashboard, track your expenses, and take control of your financial future with Stackly's intuitive tools.
+            </p>
+            
+            <!-- Financial Visual -->
+            <div class="relative w-full h-64 mt-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute top-0 left-0 bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 w-64 animate-float shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-300 text-xs mb-1">Total Balance</p>
+                            <h3 class="text-2xl font-bold text-white">$142,300.00</h3>
+                        </div>
+                        <div class="w-8 h-8 bg-brandGreen/20 rounded-full flex items-center justify-center text-brandGreen">
+                            <i class="fa-solid fa-wallet text-sm"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-brandGreen text-xs font-semibold">
+                        <i class="fa-solid fa-arrow-trend-up"></i> +12.5% this month
+                    </div>
+                </div>
+                
+                <div class="absolute bottom-4 right-10 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 w-48 animate-float-delayed shadow-xl">
+                    <p class="text-gray-300 text-xs mb-2">Recent Income</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white">
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">+$4,250.00</h4>
+                            <p class="text-gray-400 text-[10px]">Stripe Payout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative background elements -->
+        <div class="absolute top-1/4 right-0 w-96 h-96 bg-brandGreen/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-brandOrange/10 rounded-full blur-3xl pointer-events-none"></div>
+    </div>
+
+    <!-- RIGHT: Login Form -->
+    <div class="w-full lg:w-1/2 h-full flex flex-col p-8 bg-white overflow-y-auto">
+        <div class="w-full max-w-md m-auto flex flex-col justify-center py-10" data-aos="fade-in">
+            <!-- Mobile Header -->
+            <header class="lg:hidden sticky top-0 z-[60] bg-white/95 backdrop-blur-md pb-4 pt-2 mb-8 -mt-6 -mx-8 px-8 shadow-sm">
+                <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                        <span class="font-bold">S</span>
+                    </div>
+                    stackly
+                </div>
+            </header>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Welcome back</h2>
+            <p class="text-gray-500 mb-8">Sign in to continue to your Stackly account.</p>
+
+            <!-- Form Validation Alert -->
+            <div id="error-alert" class="hidden mb-6 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-xl text-sm flex items-start gap-3">
+                <i class="fa-solid fa-circle-exclamation mt-0.5"></i>
+                <span id="error-message"></span>
+            </div>
+
+            <form id="login-form" class="space-y-5" onsubmit="handleLogin(event)">
+                
+                <!-- Role Selection -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Role</label>
+                    <div class="relative">
+                        <select id="role" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl py-3.5 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all appearance-none cursor-pointer">
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email address</label>
+                    <input type="text" id="email" placeholder="john@example.com" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3.5 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                </div>
+                
+                <!-- Password Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3.5 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                </div>
+
+                <!-- Options -->
+                <div class="flex items-center justify-between pt-1">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded border-gray-300 text-brandGreen focus:ring-brandGreen accent-brandGreen" required>
+                        <span class="text-sm text-gray-600 font-medium">Remember me</span>
+                    </label>
+                    <a href="404.html" class="text-sm font-semibold text-brandGreen hover:text-green-600 transition-colors">Forgot password?</a>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="w-full bg-brandGreen text-white font-bold rounded-xl py-3.5 hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20 mt-2">
+                    Login
+                </button>
+                
+                <!-- Divider -->
+                <div class="flex items-center py-4">
+                    <div class="flex-grow h-px bg-gray-200"></div>
+                    <span class="px-4 text-xs font-semibold text-gray-400 uppercase">OR</span>
+                    <div class="flex-grow h-px bg-gray-200"></div>
+                </div>
+
+                <!-- Google Button -->
+                <button type="button" class="w-full bg-white border border-gray-200 text-gray-700 font-semibold rounded-xl py-3.5 hover:bg-gray-50 transition-colors flex items-center justify-center gap-3" onclick="window.location.href='404.html'">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+                    Continue with Google
+                </button>
+            </form>
+
+            <p class="text-center text-sm text-gray-500 mt-8">
+                Don't have an account? <a href="signup.html" class="font-semibold text-brandGreen hover:underline">Sign up</a>
+            </p>
+
+            <!-- Go Back Button at bottom -->
+            <div class="mt-12 text-center pb-8">
+                <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-gray-600 transition-colors flex items-center justify-center gap-2 mx-auto">
+                    <i class="fa-solid fa-arrow-left"></i> Go back
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stackly - Fintech Solutions</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        shine: {
+                            '100%': { transform: 'translateX(100%)' }
+                        }
+                    },
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        lightYellow: '#FFF9DA',
+                        lightGreen: '#D1FBE1',
+                        lightPeach: '#FFE6D6',
+                        darkSection: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 z-[60] w-full bg-[#FAFAFA]/95 backdrop-blur-md shadow-sm transition-all">
+    <nav class="flex justify-between items-center py-4 px-6 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer">
+            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                <span class="font-bold">S</span>
+            </div>
+            stackly
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <a href="index.html" class="text-brandGreen font-semibold">Home</a>
+            <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+            <a href="blog.html" class="hover:text-black transition-colors">Blog</a>
+            <a href="services.html" class="hover:text-black transition-colors">Services</a>
+            <a href="contact.html" class="hover:text-black transition-colors">Contact Us</a>
+        </div>
+        <div class="hidden md:block">
+            <button class="bg-brandGreen text-white px-8 py-2.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30 tracking-wide" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    
+        <!-- Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-900 focus:outline-none z-[60] relative transition-transform duration-300 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+    <div class="h-[76px] w-full"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex-col items-center pt-28 pb-10 gap-6 text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
+        <a href="index.html" class="hover:text-brandGreen mobile-link">Home</a>
+        <a href="about.html" class="hover:text-brandGreen mobile-link">About Us</a>
+        <a href="blog.html" class="hover:text-brandGreen mobile-link">Blog</a>
+        <a href="services.html" class="hover:text-brandGreen mobile-link">Services</a>
+        <a href="contact.html" class="hover:text-brandGreen mobile-link">Contact Us</a>
+        <button class="bg-brandGreen text-white px-10 py-3.5 rounded-full font-bold shadow-lg shadow-brandGreen/30 mt-4 text-lg w-3/4 max-w-xs" onclick="window.location.href='login.html'">Login</button>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="relative px-6 lg:px-10 pt-10 pb-24 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12" id="hero-section">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 -z-20 overflow-hidden rounded-3xl pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brandGreen/10 blur-[100px] rounded-full gsap-bg-blob"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brandOrange/10 blur-[100px] rounded-full gsap-bg-blob" style="animation-delay: 2s;"></div>
+            <!-- Subtle dots -->
+            <div class="absolute inset-0" style="background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 32px 32px; opacity: 0.3;"></div>
+        </div>
+
+        <div class="lg:w-1/2 z-10 hero-left-content">
+            <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6 hero-headline">
+                <span class="overflow-hidden inline-block align-bottom"><span class="hero-word inline-block translate-y-full opacity-0">Seamless</span></span>
+                <span class="overflow-hidden inline-block align-bottom"><span class="hero-word inline-block translate-y-full opacity-0">digital</span></span> <br/>
+                <span class="overflow-hidden inline-block align-bottom"><span class="hero-word inline-block text-brandOrange relative highlight-word translate-y-full opacity-0">fintech</span></span>
+                <span class="overflow-hidden inline-block align-bottom"><span class="hero-word inline-block translate-y-full opacity-0">solutions</span></span> <br/>
+                <span class="overflow-hidden inline-block align-bottom"><span class="hero-word inline-block translate-y-full opacity-0">with</span></span>
+                <span class="overflow-hidden inline-block align-bottom"><span class="hero-word inline-block translate-y-full opacity-0">stackly</span></span>
+            </h1>
+            <p class="text-gray-500 mb-8 max-w-md leading-relaxed text-lg hero-para opacity-0 translate-y-4">
+                Fintech management is all about taking control of your financial tools. Whether you're working on a personal project or running a large enterprise, stackly simplifies everything.
+            </p>
+            <div class="flex gap-4 mb-12 hero-ctas opacity-0 translate-y-4">
+                <button class="relative overflow-hidden group bg-brandGreen text-white px-8 py-3.5 rounded-full font-medium hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30 hero-btn" onclick="window.location.href='signup.html'">
+                    <span class="relative z-10">Get started</span>
+                    <div class="absolute inset-0 -translate-x-full bg-white/30 skew-x-12 group-hover:animate-[shine_1s_ease-in-out]"></div>
+                </button>
+                <button class="bg-gray-900 text-white px-8 py-3.5 rounded-full font-medium hover:bg-gray-800 transition-transform hover:-translate-y-1 hero-btn" onclick="window.location.href='contact.html'">Book a demo</button>
+            </div>
+
+            <div class="flex items-center gap-6 border-t border-gray-200 pt-6 max-w-md">
+                <div class="flex -space-x-3">
+                    <img src="assets/images/photo-1544005313-94ddf0286df2.webp" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="User 1">
+                    <img src="assets/images/photo-1506794778202-cad84cf45f1d.webp" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="User 2">
+                    <img src="assets/images/photo-1494790108377-be9c29b29330.webp" class="w-10 h-10 rounded-full border-2 border-white object-cover" alt="User 3">
+                </div>
+                <div>
+                    <p class="font-bold text-lg">20K+</p>
+                    <p class="text-xs text-gray-500">Customer trust us</p>
+                </div>
+                <div class="h-8 w-px bg-gray-200 mx-2"></div>
+                <div class="flex gap-2 items-center text-yellow-400">
+                    <i class="fa-solid fa-star text-2xl"></i>
+                    <div>
+                        <p class="font-bold text-black text-sm">4.8/5</p>
+                        <p class="text-xs text-gray-500">10K review</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:w-1/2 relative mt-16 lg:mt-0 w-full perspective-[1000px] hero-right-card opacity-0 translate-x-12">
+            <div id="gsap-3d-card" class="bg-white rounded-3xl p-6 lg:p-8 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-gray-100 relative w-full overflow-hidden transition-shadow duration-300 hover:shadow-[0_30px_60px_-15px_rgba(0,229,143,0.15)] will-change-transform">
+                <div class="bg-lightGreen absolute top-0 left-0 w-full h-24 rounded-3xl -z-10"></div>
+                <h3 class="font-semibold mb-6 pt-2">Overview</h3>
+                
+                <div class="flex flex-col lg:flex-row gap-6 items-center z-10">
+                    <div class="w-full lg:w-3/5 bg-gray-50 rounded-2xl p-4 border border-gray-100 h-64 relative flex items-end overflow-hidden group">
+                        <img src="assets/images/photo-1611974789855-9c2a0a7236a3.webp" class="absolute inset-0 w-[110%] h-[110%] max-w-none object-cover rounded-2xl opacity-80 mix-blend-multiply transition-transform duration-700 group-hover:scale-105 parallax-img" alt="Graph Chart">
+                        <div class="relative z-20 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-lg border border-white/50 m-2 transform transition-transform duration-500 hover:-translate-y-1">
+                            <p class="text-[10px] text-gray-500 font-bold uppercase">Income Analytics</p>
+                            <p class="text-brandGreen text-sm font-bold flex items-center"><i class="fa-solid fa-arrow-up text-[10px] mr-1"></i> <span class="gsap-growth-badge opacity-0 scale-50">24%</span> Growth</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full lg:w-2/5 flex flex-col gap-4">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-4 transition-transform duration-300 hover:-translate-y-1 gsap-float-item">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2"><i class="fa-solid fa-lock text-[10px]"></i> Total Money</div>
+                            <span class="text-xl font-bold block mb-1">$<span class="gsap-counter" data-target="248000">0</span>.00</span>
+                            <span class="text-brandGreen text-[10px] flex items-center inline-block bg-brandGreen/10 px-1.5 py-0.5 rounded font-medium"><i class="fa-solid fa-arrow-up mr-1 text-[8px]"></i> 8.83%</span>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-4 transition-transform duration-300 hover:-translate-y-1 gsap-float-item delay-100">
+                            <div class="flex items-center gap-2 text-xs text-gray-500 mb-2"><i class="fa-solid fa-chart-pie text-[10px]"></i> Income This Month</div>
+                            <span class="text-xl font-bold block mb-1">$<span class="gsap-counter" data-target="24000">0</span>.00</span>
+                            <span class="text-brandGreen text-[10px] flex items-center inline-block bg-brandGreen/10 px-1.5 py-0.5 rounded font-medium"><i class="fa-solid fa-arrow-up mr-1 text-[8px]"></i> 8.83%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="py-12 text-center border-t border-b border-gray-200 bg-white overflow-hidden">
+        <p class="text-gray-500 font-medium mb-8 max-w-lg mx-auto" data-aos="fade-up">More than 20+ companies around the world trusted stackly for their finance management</p>
+        
+        <div class="marquee-container opacity-60">
+            <div class="marquee-content gap-16 items-center px-8">
+                <div class="flex items-center gap-2 font-bold text-xl"><i class="fa-solid fa-cubes text-purple-600"></i> CALDEX</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-red-500"><i class="fa-solid fa-chart-column"></i> Marketing</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-indigo-600"><i class="fa-solid fa-layer-group"></i> Organization</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-yellow-500"><i class="fa-solid fa-cube"></i> Logo Ipsum</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-blue-600"><i class="fa-solid fa-mountain"></i> Company</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-green-500"><i class="fa-solid fa-leaf"></i> Telldus</div>
+                
+                <div class="flex items-center gap-2 font-bold text-xl"><i class="fa-solid fa-cubes text-purple-600"></i> CALDEX</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-red-500"><i class="fa-solid fa-chart-column"></i> Marketing</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-indigo-600"><i class="fa-solid fa-layer-group"></i> Organization</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-yellow-500"><i class="fa-solid fa-cube"></i> Logo Ipsum</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-blue-600"><i class="fa-solid fa-mountain"></i> Company</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-green-500"><i class="fa-solid fa-leaf"></i> Telldus</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW REFINED FEATURES SECTION -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <p class="text-gray-500 text-sm mb-2 font-semibold tracking-wide uppercase">Features</p>
+            <h2 class="text-4xl lg:text-5xl font-bold max-w-2xl mx-auto leading-tight">
+                Unlock the power of fintech <br/> <span class="underline decoration-brandOrange decoration-4 underline-offset-4">management</span> software
+            </h2>
+        </div>
+
+        <!-- 1. Income Analytics -->
+        <div class="flex flex-col lg:flex-row gap-6 items-center mb-12 h-auto lg:h-[480px]">
+            <div class="lg:w-[35%] bg-lightYellow rounded-[2.5rem] p-10 flex flex-col justify-center h-full w-full relative z-20" data-aos="fade-right">
+                <div class="w-14 h-14 bg-gray-900 text-white rounded-full flex items-center justify-center mb-8 shadow-lg text-xl">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-4 text-gray-900">Income analytics</h3>
+                <p class="text-gray-600 mb-8 text-sm leading-relaxed">
+                    Data analytics and seamless payment to integration, enabling businesses to streamline financial processes and make data-driven decisions. Our user-friendly interface and expert insights simplify complex financial tasks.
+                </p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-2 text-gray-900">See details <i class="fa-solid fa-arrow-right text-[12px]"></i></a>
+            </div>
+            
+            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] h-full relative overflow-hidden border border-gray-100 w-full" data-aos="fade-left">
+                <!-- Back Card (Left) -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 absolute left-8 top-1/2 -translate-y-1/2 w-64 animate-float">
+                    <div class="flex justify-between items-center mb-8">
+                        <h4 class="font-bold text-sm text-gray-800">Income Analysis</h4>
+                        <span class="text-[9px] bg-gray-50 border border-gray-200 px-2 py-1 rounded-full text-gray-500 flex items-center gap-1 font-medium">Monthly <i class="fa-solid fa-chevron-down text-[8px]"></i></span>
+                    </div>
+                    <div class="flex h-32 relative text-[8px] font-medium text-gray-400">
+                        <!-- Y Axis -->
+                        <div class="flex flex-col justify-between items-end pr-3 h-full">
+                            <span>$20K</span><span>$10K</span><span>$5K</span><span>$0</span>
+                        </div>
+                        <!-- Bars -->
+                        <div class="flex-1 flex justify-between items-end px-2 border-b border-gray-100 pb-1 h-full">
+                            <div class="flex gap-1 items-end h-full"><div class="w-2.5 bg-yellow-400 rounded-t-sm h-[50%]"></div><div class="w-2.5 bg-brandGreen rounded-t-sm h-[70%]"></div></div>
+                            <div class="flex gap-1 items-end h-full"><div class="w-2.5 bg-yellow-400 rounded-t-sm h-[30%]"></div><div class="w-2.5 bg-brandGreen rounded-t-sm h-[40%]"></div></div>
+                            <div class="flex gap-1 items-end h-full"><div class="w-2.5 bg-yellow-400 rounded-t-sm h-[80%]"></div><div class="w-2.5 bg-brandGreen rounded-t-sm h-[90%]"></div></div>
+                            <div class="flex gap-1 items-end h-full"><div class="w-2.5 bg-yellow-400 rounded-t-sm h-[40%]"></div><div class="w-2.5 bg-brandGreen rounded-t-sm h-[60%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between text-[8px] text-gray-400 mt-2 pl-8 pr-2 font-medium">
+                        <span>10 Jan</span><span>16 Feb</span><span>20 Mar</span><span>24 Apr</span>
+                    </div>
+                </div>
+
+                <!-- Front Card (Right, overlapping) -->
+                <div class="bg-white rounded-3xl p-6 mockup-shadow absolute right-8 top-1/2 -translate-y-1/2 w-[340px] z-10 animate-float-delayed">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="font-bold text-sm text-gray-800">Balance Overview</h4>
+                        <span class="text-[9px] border border-gray-200 px-3 py-1 rounded-full text-gray-600 font-medium">More info</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-1 bg-gray-50/50 p-4 rounded-2xl border border-gray-50">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="w-6 h-6 rounded-full border border-red-200 flex items-center justify-center">
+                                    <div class="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
+                                </div>
+                                <i class="fa-solid fa-ellipsis text-gray-300 text-xs"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">$50K</h3>
+                            <p class="text-[9px] text-gray-500 mb-2">-2% spendings</p>
+                            <svg class="w-full h-6" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 15 Q20 5 40 15 T80 5 T100 10" stroke="#f87171" stroke-width="2" fill="none"/></svg>
+                        </div>
+                        <div class="flex-1 bg-gray-50/50 p-4 rounded-2xl border border-gray-50">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="w-6 h-6 rounded-full border border-green-200 flex items-center justify-center">
+                                    <div class="w-2.5 h-2.5 bg-brandGreen rounded-full"></div>
+                                </div>
+                                <i class="fa-solid fa-ellipsis text-gray-300 text-xs"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">$120K</h3>
+                            <p class="text-[9px] text-gray-500 mb-2">+15% Profit</p>
+                            <svg class="w-full h-6" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 15 Q20 20 40 5 T80 15 T100 5" stroke="#00E58F" stroke-width="2" fill="none"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Expense Management -->
+        <div class="flex flex-col-reverse lg:flex-row gap-6 items-center mb-12 h-auto lg:h-[480px]">
+            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] h-full relative overflow-hidden border border-gray-100 w-full" data-aos="fade-right">
+                <!-- Left Card (Analytics) -->
+                <div class="bg-white rounded-3xl p-5 shadow-sm border border-gray-100 absolute left-8 top-10 w-[240px] z-10 animate-float">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-gray-800 mb-4"><i class="fa-regular fa-circle-play text-gray-400"></i> Analytics</div>
+                    <div class="bg-gray-900 text-white text-[10px] px-3 py-1.5 rounded-full inline-block mb-3 font-medium">Expense</div>
+                    
+                    <div class="bg-[#FFCC4D] rounded-xl p-4 mb-4">
+                        <p class="text-[10px] font-semibold text-yellow-900 mb-1">Current Balance</p>
+                        <h3 class="text-2xl font-bold text-gray-900">$25,520 <i class="fa-solid fa-chevron-down text-[10px] ml-1 opacity-50"></i></h3>
+                    </div>
+
+                    <div class="px-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <div class="flex items-center gap-2">
+                                <div class="w-5 h-5 bg-gray-900 rounded flex items-center justify-center text-white"><i class="fa-solid fa-chart-line text-[8px]"></i></div>
+                                <div><p class="text-[9px] text-gray-500 font-semibold">Total Spent</p><p class="text-xs font-bold">$16,456</p></div>
+                            </div>
+                            <span class="text-[8px] bg-gray-100 px-2 py-1 rounded text-gray-500 font-semibold">Monthly <i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="relative h-16 w-full mt-4">
+                            <div class="absolute inset-0 flex flex-col justify-between -z-10 text-[7px] text-gray-400 font-medium">
+                                <div>50k</div><div>20k</div><div>10k</div><div>0</div>
+                            </div>
+                            <svg class="absolute top-0 left-6 w-[calc(100%-24px)] h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path fill="none" stroke="#D1FBE1" stroke-width="4" d="M0,80 Q20,20 40,60 T100,20"/>
+                            </svg>
+                            <div class="absolute top-3 left-[70%] w-3 h-3 bg-gray-900 rounded-full border-2 border-white"></div>
+                            <div class="absolute top-0 left-[70%] -translate-x-1/2 -translate-y-full bg-gray-900 text-white text-[8px] px-1.5 py-0.5 rounded">$20,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Top Card (Credit Card) -->
+                <div class="bg-white rounded-3xl p-5 mockup-shadow absolute right-8 top-12 w-[320px] z-20 animate-float-delayed">
+                    <h4 class="font-bold text-sm text-gray-800 mb-4 pb-2 border-b border-gray-100">Credit card payments</h4>
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-brandOrange text-xs"><i class="fa-solid fa-check"></i></div>
+                        <p class="text-xs font-bold text-gray-800">140.00 USD</p>
+                        <button class="ml-auto bg-brandGreen text-white text-[9px] font-bold px-3 py-1.5 rounded-full shadow-sm shadow-brandGreen/20" onclick="window.location.href='404.html'">Pay Now</button>
+                    </div>
+                    <div class="flex justify-between text-[10px] px-1 font-medium">
+                        <div>
+                            <p class="text-gray-400 mb-2">Send amount</p>
+                            <div class="flex -space-x-1.5">
+                                <img src="assets/images/photo-1534528741775-53994a69daeb.webp" class="w-5 h-5 rounded-full border border-white">
+                                <img src="assets/images/photo-1534528741775-53994a69daeb.webp" class="w-5 h-5 rounded-full border border-white">
+                                <div class="w-5 h-5 rounded-full bg-gray-100 border border-white flex items-center justify-center text-[8px] text-gray-600">+2</div>
+                            </div>
+                        </div>
+                        <div><p class="text-gray-400 mb-2">Bank account</p><p class="font-bold text-gray-800">100K</p></div>
+                        <div><p class="text-gray-400 mb-2">Paypal</p><p class="font-bold text-gray-800">60K</p></div>
+                    </div>
+                </div>
+
+                <!-- Right Bottom Card (Shipping) -->
+                <div class="bg-white rounded-2xl p-4 mockup-shadow absolute right-24 bottom-14 w-[240px] z-30 animate-float">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-brandOrange">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-semibold text-gray-400">Shipping</p>
+                            <p class="font-bold text-lg text-gray-800">$41,210</p>
+                        </div>
+                        <button class="bg-brandGreen text-white text-[9px] font-bold px-3 py-1.5 rounded-full ml-auto shadow-sm shadow-brandGreen/20 flex items-center gap-1" onclick="window.location.href='404.html'">Adjust <i class="fa-solid fa-pen text-[8px]"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-[35%] bg-lightGreen rounded-[2.5rem] p-10 flex flex-col justify-center h-full w-full z-20" data-aos="fade-left">
+                <div class="w-14 h-14 bg-gray-900 text-white rounded-full flex items-center justify-center mb-8 shadow-lg text-xl">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-4 text-gray-900">Expense management</h3>
+                <p class="text-gray-600 mb-8 text-sm leading-relaxed">
+                    Data analytics and seamless payment to integration, enabling businesses to streamline financial processes and make data-driven decisions. Our user-friendly interface and expert insights simplify complex financial tasks.
+                </p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-2 text-gray-900">See details <i class="fa-solid fa-arrow-right text-[12px]"></i></a>
+            </div>
+        </div>
+
+        <!-- 3. Payment Analytics -->
+        <div class="flex flex-col lg:flex-row gap-6 items-center mb-12 h-auto lg:h-[480px]">
+            <div class="lg:w-[35%] bg-lightPeach rounded-[2.5rem] p-10 flex flex-col justify-center h-full w-full relative z-20" data-aos="fade-right">
+                <div class="w-14 h-14 bg-gray-900 text-white rounded-full flex items-center justify-center mb-8 shadow-lg text-xl">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <h3 class="text-3xl font-bold mb-4 text-gray-900">Payment analytics</h3>
+                <p class="text-gray-600 mb-8 text-sm leading-relaxed">
+                    Data analytics and seamless payment to integration, enabling businesses to streamline financial processes and make data-driven decisions. Our user-friendly interface and expert insights simplify complex financial tasks.
+                </p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-2 text-gray-900">See details <i class="fa-solid fa-arrow-right text-[12px]"></i></a>
+            </div>
+
+            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] h-full relative overflow-hidden border border-gray-100 w-full" data-aos="fade-left">
+                <!-- Back Card (Left) -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 absolute left-8 top-1/2 -translate-y-1/2 w-[280px] h-[320px] animate-float">
+                    <h4 class="font-semibold text-xs text-gray-500 mb-1">Spent This Month</h4>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">$753.00</h2>
+                    
+                    <div class="flex h-40 relative text-[8px] font-medium text-gray-400">
+                        <div class="flex flex-col justify-between items-end pr-3 h-full pb-6">
+                            <span>800</span><span>400</span><span>200</span><span>0</span>
+                        </div>
+                        <div class="flex-1 flex justify-between items-end px-2 h-full pb-6 relative z-10">
+                            <!-- Background tracks -->
+                            <div class="absolute inset-0 pl-2 pr-2 pb-6 flex justify-between">
+                                <div class="w-4 bg-gray-100 rounded-full h-full"></div>
+                                <div class="w-4 bg-gray-100 rounded-full h-full"></div>
+                                <div class="w-4 bg-gray-100 rounded-full h-full"></div>
+                                <div class="w-4 bg-gray-100 rounded-full h-full"></div>
+                                <div class="w-4 bg-gray-100 rounded-full h-full"></div>
+                            </div>
+                            <!-- Active bars -->
+                            <div class="w-4 bg-brandGreen rounded-full h-[40%] relative z-10"></div>
+                            <div class="w-4 bg-brandGreen rounded-full h-[80%] relative z-10"></div>
+                            <div class="w-4 bg-brandGreen rounded-full h-[30%] relative z-10"></div>
+                            <div class="w-4 bg-brandGreen rounded-full h-[90%] relative z-10"></div>
+                            <div class="w-4 bg-brandGreen rounded-full h-[60%] relative z-10"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between text-[8px] text-gray-400 mt-0 pl-10 pr-2 font-medium relative z-20">
+                        <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span>
+                    </div>
+                </div>
+
+                <!-- Front Card (Right, overlapping) -->
+                <div class="bg-white rounded-3xl p-6 mockup-shadow absolute right-8 top-1/2 -translate-y-1/2 w-[300px] z-10 animate-float-delayed">
+                    <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
+                        <h4 class="font-bold text-xs text-gray-800">Recent Transaction</h4>
+                        <span class="text-[9px] text-brandGreen font-semibold uppercase tracking-wider cursor-pointer">See all</span>
+                    </div>
+                    
+                    <div class="space-y-5">
+                        <div class="flex items-center gap-3">
+                            <img src="assets/images/photo-1534528741775-53994a69daeb.webp" class="w-8 h-8 rounded-full border border-gray-100 object-cover">
+                            <div class="flex-1">
+                                <p class="text-[8px] text-gray-400 font-medium">Transfer to</p>
+                                <p class="text-[10px] font-semibold text-gray-800">Jenny Wilson</p>
+                            </div>
+                            <div class="text-[10px] font-bold text-red-400">-$50.00</div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img src="assets/images/photo-1534528741775-53994a69daeb.webp" class="w-8 h-8 rounded-full border border-gray-100 object-cover">
+                            <div class="flex-1">
+                                <p class="text-[8px] text-gray-400 font-medium">Transfer from</p>
+                                <p class="text-[10px] font-semibold text-gray-800">Jenny Wilson</p>
+                            </div>
+                            <div class="text-[10px] font-bold text-brandGreen">+$150.00</div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img src="assets/images/photo-1534528741775-53994a69daeb.webp" class="w-8 h-8 rounded-full border border-gray-100 object-cover">
+                            <div class="flex-1">
+                                <p class="text-[8px] text-gray-400 font-medium">Transfer to</p>
+                                <p class="text-[10px] font-semibold text-gray-800">Jenny Wilson</p>
+                            </div>
+                            <div class="text-[10px] font-bold text-red-400">-$50.00</div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img src="assets/images/photo-1534528741775-53994a69daeb.webp" class="w-8 h-8 rounded-full border border-gray-100 object-cover">
+                            <div class="flex-1">
+                                <p class="text-[8px] text-gray-400 font-medium">Transfer to</p>
+                                <p class="text-[10px] font-semibold text-gray-800">Jenny Wilson</p>
+                            </div>
+                            <div class="text-[10px] font-bold text-brandGreen">+$200.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (Unchanged functionality) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto text-center mt-10">
+        <p class="text-gray-500 text-sm mb-2 font-semibold uppercase tracking-wider" data-aos="fade-up">Why choose us</p>
+        <h2 class="text-4xl lg:text-5xl font-bold max-w-2xl mx-auto leading-tight mb-20" data-aos="fade-up" data-aos-delay="100">
+            Why stackly is the best <br/>
+            <span class="underline decoration-brandOrange decoration-4 underline-offset-4">choice</span> for your company
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8">
+            <div data-aos="fade-up" data-aos-delay="100" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightYellow rounded-full flex items-center justify-center mb-6 text-yellow-600 shadow-sm text-xl">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Financial data analysis</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="200" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightGreen rounded-full flex items-center justify-center mb-6 text-brandGreen shadow-sm text-xl">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Real time report</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightPeach rounded-full flex items-center justify-center mb-6 text-brandOrange shadow-sm text-xl">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Business kits</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightPeach rounded-full flex items-center justify-center mb-6 text-brandOrange shadow-sm text-xl">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Digital wallet</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightYellow rounded-full flex items-center justify-center mb-6 text-yellow-600 shadow-sm text-xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Secure transactions</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightGreen rounded-full flex items-center justify-center mb-6 text-brandGreen shadow-sm text-xl">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">24/7 support</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Remaining sections kept same (Dark Tabs, Testimonials, FAQ, Blog, Footer) -->
+    
+    <!-- Dark Features Tab Section -->
+    <section class="py-24 bg-darkSection text-white mt-10 w-full overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <p class="text-gray-400 text-sm mb-2 font-semibold">Features</p>
+                <h2 class="text-4xl lg:text-5xl font-bold leading-tight mb-10">
+                    Most easiest way to <span class="underline decoration-brandOrange decoration-4 underline-offset-4">manage</span> <br/> your finance
+                </h2>
+                
+                <div class="flex justify-center items-center gap-4 flex-wrap">
+                    <button class="tab-btn active px-8 py-3 rounded-full border border-gray-600 font-medium transition-all text-sm bg-white text-gray-900" data-target="spendings">Spendings</button>
+                    <button class="tab-btn px-8 py-3 rounded-full border border-gray-600 font-medium transition-all text-sm hover:border-gray-400" data-target="transactions">Transactions</button>
+                    <button class="tab-btn px-8 py-3 rounded-full border border-gray-600 font-medium transition-all text-sm hover:border-gray-400" data-target="payroll">Payroll</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-16 items-center pt-8">
+                <!-- LEFT CONTENT SIDE (Now changes based on tabs) -->
+                <div class="lg:w-1/2 relative min-h-[300px] w-full" data-aos="fade-right">
+                    
+                    <!-- Spendings Left -->
+                    <div id="spendings-left" class="tab-content-left active transition-opacity duration-500">
+                        <h3 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">Control your spending, make goals, and achieve them</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Gain valuable data-driven insights into your business to performance. Our robust analytics tools help you make informed decisions and your strategies.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-2 mb-10 text-sm font-medium">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> No transaction limit</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Fast & easy transactions</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Secure payments</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Track & pay invoices</div>
+                        </div>
+                        <button class="bg-brandGreen text-white px-8 py-3.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20" onclick="window.location.href='404.html'">More details</button>
+                    </div>
+
+                    <!-- Transactions Left -->
+                    <div id="transactions-left" class="tab-content-left hidden opacity-0 transition-opacity duration-500">
+                        <h3 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">Effortlessly track every single transaction</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Monitor your cash flow with real-time updates and seamless integration across all your banking platforms. Never miss a payment again.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-2 mb-10 text-sm font-medium">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Instant notifications</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Auto categorization</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Export to CSV</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Cross-border payments</div>
+                        </div>
+                        <button class="bg-brandGreen text-white px-8 py-3.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20" onclick="window.location.href='404.html'">More details</button>
+                    </div>
+
+                    <!-- Payroll Left -->
+                    <div id="payroll-left" class="tab-content-left hidden opacity-0 transition-opacity duration-500">
+                        <h3 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">Automate your team's payroll process</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Pay your employees on time, every time. Calculate taxes automatically and ensure compliance with local regulations effortlessly.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-2 mb-10 text-sm font-medium">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> 1-click payroll</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Auto tax filings</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Contractor payments</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Direct deposits</div>
+                        </div>
+                        <button class="bg-brandGreen text-white px-8 py-3.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20" onclick="window.location.href='404.html'">More details</button>
+                    </div>
+                </div>
+
+                <!-- RIGHT CONTENT SIDE (Graphs) -->
+                <div class="lg:w-1/2 w-full" data-aos="fade-left">
+                    <div class="bg-white text-gray-900 rounded-3xl p-8 shadow-2xl relative min-h-[400px]">
+                        
+                        <!-- Spendings Right -->
+                        <div id="spendings-right" class="tab-content-right active transition-opacity duration-500 absolute top-8 left-8 right-8">
+                            <div class="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
+                                <div><h4 class="font-bold text-lg">Corporate Spendings</h4></div>
+                            </div>
+                            <div class="relative h-48 w-full flex items-end justify-between px-2">
+                                <div class="w-8 flex flex-col justify-end h-full relative z-10"><div class="w-full bg-brandOrange h-[30%]"></div><div class="w-full bg-brandGreen h-[10%]"></div></div>
+                                <div class="w-8 flex flex-col justify-end h-full relative z-10"><div class="w-full bg-brandOrange h-[50%]"></div><div class="w-full bg-brandGreen h-[30%]"></div></div>
+                                <div class="w-8 flex flex-col justify-end h-full relative z-10"><div class="w-full bg-brandOrange h-[40%]"></div><div class="w-full bg-brandGreen h-[20%]"></div></div>
+                                <div class="w-8 flex flex-col justify-end h-full relative z-10"><div class="w-full bg-brandOrange h-[60%]"></div><div class="w-full bg-brandGreen h-[30%]"></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Transactions Right -->
+                        <div id="transactions-right" class="tab-content-right hidden opacity-0 transition-opacity duration-500 absolute top-8 left-8 right-8">
+                            <div class="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
+                                <div><h4 class="font-bold text-lg">Transactions Overview</h4></div>
+                            </div>
+                            <div class="relative h-48 w-full flex items-center justify-center">
+                                <i class="fa-solid fa-arrow-trend-up text-9xl text-brandGreen opacity-20"></i>
+                                <div class="absolute text-3xl font-bold">$142,300.00</div>
+                            </div>
+                        </div>
+
+                        <!-- Payroll Right -->
+                        <div id="payroll-right" class="tab-content-right hidden opacity-0 transition-opacity duration-500 absolute top-8 left-8 right-8">
+                            <div class="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
+                                <h4 class="font-bold text-lg">Payments Forecast</h4>
+                            </div>
+                            <div class="relative h-48 w-full flex items-end justify-between px-2">
+                                <div class="w-8 flex flex-col justify-end h-full z-10"><div class="w-full bg-brandGreen h-[20%]"></div><div class="w-full bg-yellow-400 h-[10%]"></div></div>
+                                <div class="w-8 flex flex-col justify-end h-full z-10"><div class="w-full bg-brandGreen h-[30%]"></div><div class="w-full bg-yellow-400 h-[25%]"></div></div>
+                                <div class="w-8 flex flex-col justify-end h-full z-10"><div class="w-full bg-brandGreen h-[45%]"></div><div class="w-full bg-yellow-400 h-[15%]"></div></div>
+                                <div class="w-8 flex flex-col justify-end h-full z-10"><div class="w-full bg-brandGreen h-[15%]"></div><div class="w-full bg-yellow-400 h-[10%]"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Interactive Slider) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto bg-white relative">
+        <div class="mb-12 text-center lg:text-left" data-aos="fade-up">
+            <p class="text-gray-500 text-sm mb-2 font-semibold tracking-wide">Testimonials</p>
+            <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
+                What our clients have to <br class="hidden lg:block"/> say <span class="underline decoration-brandOrange decoration-4 underline-offset-4">about us</span>
+            </h2>
+        </div>
+
+        <div class="relative overflow-hidden bg-gray-50 rounded-[2.5rem] h-[600px] sm:h-[500px] lg:h-[400px]" data-aos="fade-up" data-aos-delay="100">
+            <!-- Navigation arrows absolute positioned -->
+            <div class="absolute bottom-10 left-10 lg:bottom-16 lg:left-16 z-30 flex gap-4">
+                <button id="test-prev" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-gray-900 shadow-md border border-gray-100 transition-colors"><i class="fa-solid fa-arrow-left"></i></button>
+                <button id="test-next" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-gray-900 shadow-md border border-gray-100 transition-colors"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Slide 1: Sophia Sanders (Co-founder) -->
+            <div class="testimonial-slide absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-8 lg:p-16 transition-opacity duration-300">
+                <div class="w-full lg:w-[55%] z-20">
+                    <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10 font-medium">
+                        "Our company's rapid growth demanded a fintech solution that could keep up. Digixy has been the answer. Their comprehensive fintech services helped us manage our financial operations with ease."
+                    </p>
+                    <h4 class="font-bold text-gray-900 text-lg">Sophia Sanders</h4>
+                    <p class="text-gray-500 text-sm">Co-founder</p>
+                </div>
+                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-16 lg:pb-0">
+                    <img src="assets/images/photo-1573496359142-b8d87734a5a2.webp" class="h-full w-full lg:w-auto object-cover rounded-3xl lg:rounded-none lg:rounded-tl-full mix-blend-multiply" alt="Sophia Sanders">
+                </div>
+            </div>
+
+            <!-- Slide 2: Michael Chen (CEO) -->
+            <div class="testimonial-slide hidden opacity-0 absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-8 lg:p-16 transition-opacity duration-300">
+                <div class="w-full lg:w-[55%] z-20">
+                    <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10 font-medium">
+                        "stackly has completely transformed how we handle our corporate expenses. The real-time reporting is an absolute game changer for our executive board meetings."
+                    </p>
+                    <h4 class="font-bold text-gray-900 text-lg">Michael Chen</h4>
+                    <p class="text-gray-500 text-sm">CEO</p>
+                </div>
+                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-16 lg:pb-0">
+                    <img src="assets/images/photo-1560250097-0b93528c311a.webp" class="h-full w-full lg:w-auto object-cover rounded-3xl lg:rounded-none lg:rounded-tl-full mix-blend-multiply" alt="Michael Chen">
+                </div>
+            </div>
+
+            <!-- Slide 3: Sarah Jenkins (Finance Officer) -->
+            <div class="testimonial-slide hidden opacity-0 absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-8 lg:p-16 transition-opacity duration-300">
+                <div class="w-full lg:w-[55%] z-20">
+                    <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10 font-medium">
+                        "As a finance officer, accuracy and security are my top priorities. The seamless integration with our existing banking structure makes my day-to-day operations flawless."
+                    </p>
+                    <h4 class="font-bold text-gray-900 text-lg">Sarah Jenkins</h4>
+                    <p class="text-gray-500 text-sm">Finance Officer</p>
+                </div>
+                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-16 lg:pb-0">
+                    <img src="assets/images/photo-1580489944761-15a19d654956.webp" class="h-full w-full lg:w-auto object-cover rounded-3xl lg:rounded-none lg:rounded-tl-full mix-blend-multiply" alt="Sarah Jenkins">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 px-6 max-w-4xl mx-auto bg-white text-center">
+        <p class="text-gray-500 text-sm mb-2 font-semibold">Frequently asked questions</p>
+        <h2 class="text-4xl lg:text-5xl font-bold leading-tight mb-16">
+            Learn more about our platform <br/> by exploring these <span class="underline decoration-brandOrange decoration-4 underline-offset-4">questions</span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-left">
+            <div class="faq-item bg-gray-50 rounded-2xl p-5 cursor-pointer hover:bg-gray-100 transition-colors" data-aos="fade-up">
+                <div class="flex justify-between items-center font-semibold text-gray-800">
+                    What is fintech management software? <i class="fa-solid fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-content hidden mt-4 text-sm text-gray-500 leading-relaxed">Explanation of what fintech management software is and its benefits.</div>
+            </div>
+            <div class="faq-item bg-gray-50 rounded-2xl p-5 cursor-pointer hover:bg-gray-100 transition-colors" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex justify-between items-center font-semibold text-gray-800">
+                    Is stackly suitable for my business? <i class="fa-solid fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-content hidden mt-4 text-sm text-gray-500 leading-relaxed">Yes, stackly scales with businesses of all sizes.</div>
+            </div>
+            <div class="faq-item bg-gray-50 rounded-2xl p-5 cursor-pointer hover:bg-gray-100 transition-colors" data-aos="fade-up">
+                <div class="flex justify-between items-center font-semibold text-gray-800">
+                    What kind of support is available? <i class="fa-solid fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-content hidden mt-4 text-sm text-gray-500 leading-relaxed">We offer 24/7 dedicated support via chat, email, and phone.</div>
+            </div>
+            <div class="faq-item bg-gray-50 rounded-2xl p-5 cursor-pointer hover:bg-gray-100 transition-colors" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex justify-between items-center font-semibold text-gray-800">
+                    How can I update my billing information? <i class="fa-solid fa-plus faq-icon"></i>
+                </div>
+                <div class="faq-content hidden mt-4 text-sm text-gray-500 leading-relaxed">You can easily update your billing from your account settings page.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="pt-24 pb-48 px-6 max-w-7xl mx-auto bg-white">
+        <div class="flex flex-col lg:flex-row justify-between items-end mb-12" data-aos="fade-up">
+            <div>
+                <p class="text-gray-500 text-sm mb-2 font-semibold">Recent articles</p>
+                <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
+                    Discover our <span class="underline decoration-brandOrange decoration-4 underline-offset-4">latest</span> <br/> blog posts
+                </h2>
+            </div>
+            <button class="mt-6 lg:mt-0 border border-gray-300 rounded-full px-6 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors" onclick="window.location.href='blog.html'">Browse all articles</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group cursor-pointer" data-aos="fade-up">
+                <div class="relative overflow-hidden rounded-[2rem] mb-6 h-64 bg-gray-100">
+                    <img src="assets/images/photo-1460925895917-afdab827c52f.webp" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Blog 1">
+                </div>
+                <p class="text-brandOrange font-semibold text-sm mb-2">Marketing</p>
+                <h3 class="text-xl font-bold mb-4 text-gray-900 group-hover:text-brandGreen transition-colors">Tax law, regulations and update relevant to business</h3>
+            </div>
+            
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative overflow-hidden rounded-[2rem] mb-6 h-64 bg-gray-100">
+                    <img src="assets/images/photo-1454165804606-c3d57bc86b40.webp" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Blog 2">
+                </div>
+                <p class="text-brandGreen font-semibold text-sm mb-2">Business</p>
+                <h3 class="text-xl font-bold mb-4 text-gray-900 group-hover:text-brandGreen transition-colors">Success stories, challenges and advice from entrepreneurs</h3>
+            </div>
+
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden rounded-[2rem] mb-6 h-64 bg-gray-100">
+                    <img src="assets/images/photo-1522071820081-009f0129c71c.webp" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Blog 3">
+                </div>
+                <p class="text-yellow-500 font-semibold text-sm mb-2">Management</p>
+                <h3 class="text-xl font-bold mb-4 text-gray-900 group-hover:text-brandGreen transition-colors">Tips on accounting best precise on business</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer + CTA overlapping -->
+    <div class="relative mt-24">
+        <div class="absolute left-6 right-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 top-0 -translate-y-1/2 z-20 max-w-5xl lg:w-full">
+            <div class="bg-brandGreen rounded-[2rem] p-6 md:p-12 text-center text-white shadow-2xl relative overflow-hidden" data-aos="zoom-in">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Manage your <span class="underline decoration-brandOrange decoration-4 underline-offset-4">finances</span> <br/> & save time
+                </h2>
+                <form action="404.html" method="GET" class="flex max-w-md mx-auto relative">
+                    <input type="email" placeholder="Enter your email" class="w-full bg-white/20 border border-white/30 text-gray-900 placeholder-gray-700 rounded-full py-4 pl-6 pr-32 outline-none focus:bg-white/40 transition-colors" required>
+                    <button type="submit" class="absolute right-1.5 top-1.5 bottom-1.5 bg-gray-900 text-white rounded-full px-6 font-semibold hover:bg-gray-800 transition-colors">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="bg-darkSection text-white pt-56 pb-12 px-6 lg:px-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-16 text-center md:text-left">
+                    
+                    <!-- Col 1: Brand -->
+                    <div class="lg:col-span-6 bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col items-center md:items-start">
+                        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter mb-6 justify-center md:justify-start">
+                            <div class="w-8 h-8 bg-brandOrange text-white flex items-center justify-center rounded-lg">
+                                <span class="font-bold">S</span>
+                            </div>
+                            stackly
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 pr-0 md:pr-4">We're just announced new feature that would help you increase your experience of using metadata.</p>
+                        <div class="flex gap-3 justify-center md:justify-start">
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Quick links</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li><a href="index.html" class="hover:text-brandGreen transition-colors">Home</a></li>
+                            <li><a href="about.html" class="hover:text-brandGreen transition-colors">About us</a></li>
+                            <li><a href="services.html" class="hover:text-brandGreen transition-colors">Services</a></li>
+                            <li><a href="blog.html" class="hover:text-brandGreen transition-colors">Blog</a></li>
+                            <li><a href="contact.html" class="hover:text-brandGreen transition-colors">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Contact Us -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Contact Us</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-envelope mt-1 text-brandGreen"></i> <span>info@stackly.com</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-phone mt-1 text-brandGreen"></i> <span>9090909090</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-location-dot mt-1 text-brandGreen"></i> <span>MMR Complex, Chinna Tirupati, Near Chinnamuniyappan Kovil, Salem, Pincode 636008</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div class="text-center pt-8 text-gray-500 text-sm">
+                    Copyright © stackly | Designed by Brandbes
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+    <!-- GSAP Premium Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Respect reduced motion
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!prefersReducedMotion) {
+                // Master Timeline for Hero
+                const heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+                // 1. Headline Word-by-Word
+                heroTl.to(".hero-word", {
+                    y: "0%",
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "back.out(1.2)"
+                }, "+=0.2");
+
+                // Highlight color reveal for "fintech"
+                heroTl.fromTo(".highlight-word", 
+                    { color: "#0F172A" }, 
+                    { color: "#FF5B37", duration: 0.6, ease: "power2.inOut" }, 
+                    "-=0.4"
+                );
+
+                // 2. Paragraph & CTAs
+                heroTl.to([".hero-para", ".hero-ctas"], {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.2
+                }, "-=0.6");
+
+                // 3. Right Card Slide In
+                heroTl.to(".hero-right-card", {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out"
+                }, "-=0.8");
+
+                // 4. Counter Animation
+                const counters = document.querySelectorAll('.gsap-counter');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    heroTl.to(counter, {
+                        innerHTML: target,
+                        duration: 1.5,
+                        snap: { innerHTML: 1 },
+                        onUpdate: function() {
+                            counter.innerHTML = Math.ceil(this.targets()[0].innerHTML).toLocaleString();
+                        }
+                    }, "-=0.5");
+                });
+
+                // 5. Badges Scale in
+                heroTl.to(".gsap-growth-badge", {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "back.out(1.5)"
+                }, "-=1");
+
+                // 6. Floating animations for card items
+                gsap.to(".gsap-float-item", {
+                    y: -8,
+                    duration: 2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    stagger: 0.3
+                });
+
+                // 7. Background blobs gentle rotation/scale
+                gsap.to(".gsap-bg-blob", {
+                    rotation: 360,
+                    scale: 1.2,
+                    duration: 20,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "none",
+                    stagger: 2,
+                    transformOrigin: "center"
+                });
+
+                // 3D Mouse Follow Tilt for Card
+                const card = document.getElementById('gsap-3d-card');
+                const parallaxImg = document.querySelector('.parallax-img');
+                
+                if (card && window.innerWidth > 1024) {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        
+                        const rotateX = ((y - centerY) / centerY) * -5;
+                        const rotateY = ((x - centerX) / centerX) * 5;
+
+                        gsap.to(card, {
+                            rotationX: rotateX,
+                            rotationY: rotateY,
+                            transformPerspective: 1000,
+                            ease: "power2.out",
+                            duration: 0.5
+                        });
+
+                        // Image Parallax inside card
+                        if(parallaxImg) {
+                            gsap.to(parallaxImg, {
+                                x: -((x - centerX) / centerX) * 10,
+                                y: -((y - centerY) / centerY) * 10,
+                                ease: "power2.out",
+                                duration: 0.5
+                            });
+                        }
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        gsap.to(card, {
+                            rotationX: 0,
+                            rotationY: 0,
+                            ease: "power3.out",
+                            duration: 0.8
+                        });
+                        if(parallaxImg) {
+                            gsap.to(parallaxImg, { x: 0, y: 0, ease: "power3.out", duration: 0.8 });
+                        }
+                    });
+                }
+                
+                // ScrollTrigger Parallax on entire Hero section
+                gsap.to("#hero-section", {
+                    scrollTrigger: {
+                        trigger: "#hero-section",
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 1
+                    },
+                    y: 100,
+                    opacity: 0.5
+                });
+            } else {
+                // Fallback for reduced motion: just set everything to visible instantly
+                gsap.set([".hero-word", ".hero-para", ".hero-ctas", ".hero-right-card", ".gsap-growth-badge"], { 
+                    y: 0, x: 0, opacity: 1, scale: 1 
+                });
+                const counters = document.querySelectorAll('.gsap-counter');
+                counters.forEach(counter => {
+                    counter.innerHTML = parseInt(counter.getAttribute('data-target')).toLocaleString();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

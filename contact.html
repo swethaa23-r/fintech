@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stackly - Contact Us</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        lightYellow: '#FFF9DA',
+                        lightGreen: '#D1FBE1',
+                        lightPeach: '#FFE6D6',
+                        darkSection: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 z-[60] w-full bg-[#FAFAFA]/95 backdrop-blur-md shadow-sm transition-all">
+    <nav class="flex justify-between items-center py-4 px-6 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer">
+            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                <span class="font-bold">S</span>
+            </div>
+            stackly
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <a href="index.html" class="hover:text-black transition-colors">Home</a>
+            <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+            <a href="blog.html" class="hover:text-black transition-colors">Blog</a>
+            <a href="services.html" class="hover:text-black transition-colors">Services</a>
+            <a href="contact.html" class="text-brandGreen font-semibold">Contact Us</a>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <div class="md:hidden flex items-center">
+            <button class="text-gray-900 focus:outline-none" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div class="hidden md:block">
+            <button class="bg-brandGreen text-white px-8 py-2.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30 tracking-wide" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    </nav>
+</header>
+    <div class="h-[76px] w-full"></div>
+    <!-- Mobile Menu -->
+        <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex-col items-center pt-28 pb-10 gap-6 justify-start text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
+        <a href="index.html" class="hover:text-brandGreen mobile-link">Home</a>
+        <a href="about.html" class="hover:text-brandGreen mobile-link">About Us</a>
+        <a href="blog.html" class="hover:text-brandGreen mobile-link">Blog</a>
+        <a href="services.html" class="hover:text-brandGreen mobile-link">Services</a>
+        <a href="contact.html" class="hover:text-brandGreen mobile-link">Contact Us</a>
+        <button class="bg-brandGreen text-white px-10 py-3.5 rounded-full font-bold shadow-lg shadow-brandGreen/30 mt-4 text-lg w-3/4 max-w-xs" onclick="window.location.href='login.html'">Login</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6 max-w-4xl mx-auto text-center">
+        <p class="text-brandGreen text-sm mb-4 font-bold uppercase tracking-wider" data-aos="fade-up">GET IN TOUCH</p>
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
+            Let's build a better financial future together
+        </h1>
+        <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed text-lg" data-aos="fade-up" data-aos-delay="200">
+            Reach out to the stackly team for questions about our platform, dedicated support, exciting partnership opportunities, or tailored business inquiries. We're here to help you succeed.
+        </p>
+    </section>
+
+    <!-- Contact Layout -->
+    <section class="py-12 px-6 lg:px-10 max-w-7xl mx-auto mb-20">
+        <div class="flex flex-col lg:flex-row gap-12">
+            
+            <!-- LEFT: Contact Information Cards -->
+            <div class="lg:w-5/12 flex flex-col gap-6" data-aos="fade-right">
+                
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-start gap-5 hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 bg-lightGreen rounded-full flex items-center justify-center text-brandGreen text-xl shrink-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Email Address</h3>
+                        <p class="text-gray-500 text-sm mb-1">Our friendly team is here to help.</p>
+                        <a href="mailto:info@stackly.com" class="font-semibold text-gray-900 hover:text-brandGreen transition-colors">info@stackly.com</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-start gap-5 hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 bg-lightYellow rounded-full flex items-center justify-center text-yellow-600 text-xl shrink-0">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Phone Number</h3>
+                        <p class="text-gray-500 text-sm mb-1">Mon-Fri from 8am to 5pm.</p>
+                        <a href="tel:+1234567890" class="font-semibold text-gray-900 hover:text-brandGreen transition-colors">+1 (234) 567-890</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-start gap-5 hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 bg-lightPeach rounded-full flex items-center justify-center text-brandOrange text-xl shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Office Location</h3>
+                        <p class="text-gray-500 text-sm mb-1">Come say hello at our office HQ.</p>
+                        <p class="font-semibold text-gray-900 leading-snug">MMR Complex, Chinna Tirupati<br>Salem, Pincode 636008</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-start gap-5 hover:-translate-y-1 transition-transform">
+                    <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 text-xl shrink-0">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Business Hours</h3>
+                        <p class="text-gray-500 text-sm mb-1">Working hours for support.</p>
+                        <p class="font-semibold text-gray-900">Monday - Friday: 9 AM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Contact Form -->
+            <div class="lg:w-7/12" data-aos="fade-left">
+                <div class="bg-white rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)]">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Send us a message</h3>
+                    <form action="404.html" method="GET" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                                <input type="text" placeholder="John Doe" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3.5 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                                <input type="email" placeholder="john@example.com" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3.5 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" placeholder="+1 (555) 000-0000" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3.5 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                                <input type="text" placeholder="How can we help?" class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3.5 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea rows="5" placeholder="Tell us a little about your project or questions..." class="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl py-3.5 px-4 outline-none focus:bg-white focus:border-brandGreen focus:ring-2 focus:ring-brandGreen/20 transition-all resize-none" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#00E58F] text-white font-bold text-lg rounded-xl py-4 hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30 mt-2">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Dark Section -->
+    <section class="py-24 bg-darkSection text-white text-center w-full">
+        <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">Have a question about your finances?</h2>
+            <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">Our financial experts are ready to provide you with tailored solutions and answer any questions you might have about managing your wealth.</p>
+            <button class="bg-brandGreen text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20" onclick="window.location.href='contact.html'">Book a Demo</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="relative pt-10 bg-darkSection">
+        <footer class="text-white pb-12 px-6 lg:px-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-16 text-center md:text-left pt-16">
+                    
+                    <!-- Col 1: Brand -->
+                    <div class="lg:col-span-6 bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col items-center md:items-start">
+                        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter mb-6 justify-center md:justify-start">
+                            <div class="w-8 h-8 bg-brandOrange text-white flex items-center justify-center rounded-lg">
+                                <span class="font-bold">S</span>
+                            </div>
+                            stackly
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 pr-0 md:pr-4">We're just announced new feature that would help you increase your experience of using metadata.</p>
+                        <div class="flex gap-3 justify-center md:justify-start">
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Quick links</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li><a href="index.html" class="hover:text-brandGreen transition-colors">Home</a></li>
+                            <li><a href="about.html" class="hover:text-brandGreen transition-colors">About us</a></li>
+                            <li><a href="services.html" class="hover:text-brandGreen transition-colors">Services</a></li>
+                            <li><a href="blog.html" class="hover:text-brandGreen transition-colors">Blog</a></li>
+                            <li><a href="contact.html" class="hover:text-brandGreen transition-colors">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Contact Us -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Contact Us</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-envelope mt-1 text-brandGreen"></i> <span>info@stackly.com</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-phone mt-1 text-brandGreen"></i> <span>9090909090</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-location-dot mt-1 text-brandGreen"></i> <span>MMR Complex, Chinna Tirupati, Near Chinnamuniyappan Kovil, Salem, Pincode 636008</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div class="text-center pt-8 text-gray-500 text-sm">
+                    Copyright © stackly | Designed by Brandbes
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Simple mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

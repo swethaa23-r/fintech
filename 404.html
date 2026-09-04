@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stackly - Page Not Found</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        lightYellow: '#FFF9DA',
+                        lightGreen: '#D1FBE1',
+                        lightPeach: '#FFE6D6',
+                        darkSection: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans overflow-x-hidden flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 z-[60] w-full bg-white/95 backdrop-blur-md shadow-sm transition-all">
+    <nav class="flex justify-between items-center py-4 px-6 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer" onclick="window.location.href='index.html'">
+            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                <span class="font-bold">S</span>
+            </div>
+            stackly
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <a href="index.html" class="hover:text-black transition-colors">Home</a>
+            <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+            <a href="blog.html" class="hover:text-black transition-colors">Blog</a>
+            <a href="services.html" class="hover:text-black transition-colors">Services</a>
+            <a href="contact.html" class="hover:text-black transition-colors">Contact Us</a>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <div class="md:hidden flex items-center">
+            <button class="text-gray-900 focus:outline-none" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div class="hidden md:block">
+            <button class="bg-brandGreen text-white px-8 py-2.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30 tracking-wide" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    </nav>
+</header>
+    <div class="h-[76px] w-full"></div>
+    <!-- Mobile Menu -->
+        <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex-col items-center pt-28 pb-10 gap-6 justify-start text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
+        <a href="index.html" class="hover:text-brandGreen mobile-link">Home</a>
+        <a href="about.html" class="hover:text-brandGreen mobile-link">About Us</a>
+        <a href="blog.html" class="hover:text-brandGreen mobile-link">Blog</a>
+        <a href="services.html" class="hover:text-brandGreen mobile-link">Services</a>
+        <a href="contact.html" class="hover:text-brandGreen mobile-link">Contact Us</a>
+        <button class="bg-brandGreen text-white px-10 py-3.5 rounded-full font-bold shadow-lg shadow-brandGreen/30 mt-4 text-lg w-3/4 max-w-xs" onclick="window.location.href='login.html'">Login</button>
+    </div>
+
+    <!-- 404 Content -->
+    <main class="flex-grow flex items-center justify-center relative overflow-hidden px-6 pb-20">
+        <!-- Background shapes/visuals (Subtle fintech vibe) -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center">
+            <!-- Large faint circle representing coin/globe -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-brandGreen/5 to-brandOrange/5 rounded-full blur-3xl"></div>
+            
+            <!-- Floating Elements -->
+            <div class="absolute top-1/4 left-1/4 animate-float opacity-30 text-brandGreen">
+                <i class="fa-solid fa-chart-line text-6xl"></i>
+            </div>
+            <div class="absolute bottom-1/4 right-1/4 animate-float-delayed opacity-20 text-brandOrange">
+                <i class="fa-solid fa-coins text-8xl"></i>
+            </div>
+            <div class="absolute top-1/3 right-1/3 animate-float opacity-10 text-gray-400">
+                <i class="fa-solid fa-credit-card text-5xl"></i>
+            </div>
+            <!-- Grid lines background -->
+            <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#00E58F 1px, transparent 1px); background-size: 40px 40px;"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-2xl mx-auto" data-aos="fade-up">
+            <!-- 404 Text with Gradient -->
+            <h1 class="text-[120px] md:text-[180px] font-black leading-none tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-brandGreen via-[#00c97b] to-brandOrange drop-shadow-sm mb-2 select-none">
+                404
+            </h1>
+            
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Page not found
+            </h2>
+            
+            <p class="text-gray-500 text-lg md:text-xl mb-10 max-w-md mx-auto leading-relaxed">
+                Sorry, the page you're looking for doesn't exist or may have been moved.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="index.html" class="w-full sm:w-auto bg-brandGreen text-white px-8 py-3.5 rounded-full font-bold hover:bg-green-500 transition-all shadow-lg shadow-brandGreen/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-house text-sm"></i> Back to Home
+                </a>
+                <button onclick="window.history.back()" class="w-full sm:w-auto bg-white text-gray-900 border border-gray-200 px-8 py-3.5 rounded-full font-bold hover:bg-gray-50 hover:border-gray-300 transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrow-left text-sm"></i> Go back
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Simple mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+

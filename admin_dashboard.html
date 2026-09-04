@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stackly - Admin Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        darkSection: '#0F172A',
+                        adminAccent: '#3B82F6', // Blue for admin distinction
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans flex flex-col lg:flex-row min-h-screen lg:h-screen lg:overflow-hidden">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-30 hidden lg:hidden transition-opacity"></div>
+
+    <!-- LEFT SIDEBAR -->
+    <aside id="sidebar" class="bg-[#0B1120] text-gray-400 w-64 flex-shrink-0 fixed inset-y-0 left-0 transform -translate-x-full lg:relative lg:translate-x-0 z-40 transition-transform duration-300 ease-in-out flex flex-col h-full border-r border-gray-800">
+        <!-- Logo -->
+        <div class="h-16 flex items-center px-8 border-b border-gray-800 flex-shrink-0">
+            <div class="flex items-center gap-2 font-bold text-xl tracking-tighter text-white cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="w-7 h-7 bg-adminAccent text-white flex items-center justify-center rounded-md">
+                    <span class="font-bold">S</span>
+                </div>
+                stackly <span class="text-[10px] bg-adminAccent/20 text-adminAccent px-1.5 py-0.5 rounded ml-1 font-semibold">ADMIN</span>
+            </div>
+            <!-- Close button for mobile -->
+            <button id="close-sidebar" class="lg:hidden ml-auto text-gray-400 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-1 text-sm">
+            <p class="px-4 text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2">Management</p>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 bg-adminAccent/10 text-adminAccent rounded-lg font-semibold transition-colors">
+                <i class="fa-solid fa-chart-pie w-5 text-center"></i> Overview
+            </a>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-users w-5 text-center"></i> Users
+            </a>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-money-bill-transfer w-5 text-center"></i> Transactions
+            </a>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-building-columns w-5 text-center"></i> Accounts
+            </a>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-money-check-dollar w-5 text-center"></i> Payments
+            </a>
+            
+            <p class="px-4 text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2 mt-6">Insights</p>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-file-invoice w-5 text-center"></i> Reports
+            </a>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-chart-line w-5 text-center"></i> Analytics
+            </a>
+            
+            <p class="px-4 text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2 mt-6">System</p>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-headset w-5 text-center"></i> Support
+            </a>
+            <a href="404.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-gear w-5 text-center"></i> Settings
+            </a>
+        </div>
+        
+        <!-- Bottom -->
+        <div class="p-4 border-t border-gray-800 flex flex-col gap-1 flex-shrink-0">
+            <a href="404.html" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors">
+                <div class="w-7 h-7 rounded-full bg-gray-800 text-gray-300 flex items-center justify-center text-xs"><i class="fa-solid fa-user"></i></div>
+                Admin Profile
+            </a>
+            <a href="login.html" class="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-brandOrange rounded-lg font-medium transition-colors">
+                <i class="fa-solid fa-arrow-right-from-bracket w-5 text-center"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 flex flex-col min-w-0 lg:h-screen lg:overflow-hidden">
+        
+        <!-- TOP BAR -->
+        <header class="relative bg-white border-b border-gray-200 h-16 flex items-center justify-between px-4 lg:px-8 z-20 flex-shrink-0 shadow-sm sticky top-0 lg:static">
+            <!-- Mobile Logo Centered -->
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:hidden flex items-center gap-2">
+                <div class="w-7 h-7 bg-[#3B82F6] text-white flex items-center justify-center rounded-md shadow-sm">
+                    <i class="fa-solid fa-shield-halved text-sm"></i>
+                </div>
+                <span class="text-lg font-bold text-gray-900 tracking-tight">
+                    stackly <span class="text-[10px] bg-[#3B82F6]/20 text-[#3B82F6] px-1.5 py-0.5 rounded ml-1 font-semibold">ADMIN</span>
+                </span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-500 hover:text-gray-900 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+                <h2 class="text-xl font-bold text-gray-900 hidden sm:block">Admin Dashboard</h2>
+                  <div class="hidden md:block text-sm font-medium text-gray-500 ml-2" id="current-date"></div>
+            </div>
+            
+            <div class="flex items-center gap-4 sm:gap-6">
+                <!-- Search -->
+                <div class="relative hidden md:block">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" placeholder="Search users, transactions..." class="bg-gray-100 border-transparent rounded-lg py-2 pl-9 pr-4 text-sm outline-none focus:bg-white focus:border-adminAccent focus:ring-1 focus:ring-adminAccent transition-all w-64" required>
+                </div>
+                <!-- Search Icon Mobile -->
+                <button class="hidden text-gray-500 hover:text-adminAccent transition-colors" onclick="window.location.href='404.html'">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                
+                <!-- Notifications -->
+                <button class="relative hidden md:block text-gray-500 hover:text-adminAccent transition-colors" onclick="window.location.href='404.html'">
+                    <i class="fa-regular fa-bell text-xl"></i>
+                    <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+                </button>
+                
+                <!-- Profile -->
+                <div id="profile-dropdown-btn" class="flex items-center gap-3 pl-4 sm:pl-6 border-l border-gray-200 cursor-pointer relative">
+                    <div class="hidden sm:block text-right">
+                        <p class="text-sm font-bold text-gray-900 leading-tight"><span class="dynamic-fullname">System Admin</span></p>
+                        <p class="text-[10px] text-adminAccent font-bold uppercase tracking-wider">Admin</p>
+                    </div>
+                    <div class="w-9 h-9 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-sm border border-gray-300 cursor-pointer hover:bg-gray-300 transition-colors"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD SCROLLABLE AREA -->
+        <main class="flex-1 lg:overflow-y-auto p-4 lg:p-8 bg-gray-100">
+        <div id="view-dashboard" class="page-view block w-full h-full">
+
+            <div class="max-w-7xl mx-auto space-y-6">
+                
+                <!-- Welcome Section -->
+                <div>
+                    <h1 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-1">Admin Overview</h1>
+                    <p class="text-gray-500 text-sm">Monitor platform performance and financial activity.</p>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Total Users -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Total Users</p>
+                            <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">24,580</h3>
+                        <span class="text-green-600 bg-green-50 px-2 py-0.5 rounded font-semibold text-xs flex items-center gap-1 w-max"><i class="fa-solid fa-arrow-trend-up"></i> +12.5%</span>
+                    </div>
+                    
+                    <!-- Total Transactions -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Total Transactions</p>
+                            <div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600">
+                                <i class="fa-solid fa-right-left"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">128,450</h3>
+                        <span class="text-green-600 bg-green-50 px-2 py-0.5 rounded font-semibold text-xs flex items-center gap-1 w-max"><i class="fa-solid fa-arrow-trend-up"></i> +8.2%</span>
+                    </div>
+
+                    <!-- Total Revenue -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Total Revenue</p>
+                            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center text-green-600">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">$1,284,500</h3>
+                        <span class="text-green-600 bg-green-50 px-2 py-0.5 rounded font-semibold text-xs flex items-center gap-1 w-max"><i class="fa-solid fa-arrow-trend-up"></i> +14.6%</span>
+                    </div>
+
+                    <!-- Active Accounts -->
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-2">
+                            <p class="text-gray-500 text-xs font-bold uppercase tracking-wider">Active Accounts</p>
+                            <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">18,920</h3>
+                        <span class="text-green-600 bg-green-50 px-2 py-0.5 rounded font-semibold text-xs flex items-center gap-1 w-max"><i class="fa-solid fa-arrow-trend-up"></i> +6.4%</span>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Revenue Overview -->
+                    <div class="lg:col-span-2 bg-white rounded-xl p-5 shadow-sm border border-gray-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                            <h3 class="text-lg font-bold text-gray-900">Revenue Overview</h3>
+                            
+                            <!-- Filters -->
+                            <div class="flex items-center bg-gray-100 p-1 rounded-lg">
+                                <button class="px-3 py-1 text-xs font-semibold rounded-md bg-white text-gray-900 shadow-sm transition-colors" onclick="window.location.href='404.html'">Monthly</button>
+                                <button class="px-3 py-1 text-xs font-semibold rounded-md text-gray-500 hover:text-gray-900 transition-colors" onclick="window.location.href='404.html'">Quarterly</button>
+                                <button class="px-3 py-1 text-xs font-semibold rounded-md text-gray-500 hover:text-gray-900 transition-colors" onclick="window.location.href='404.html'">Yearly</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Inline SVG Bar Chart Placeholder for Revenue -->
+                        <div class="relative w-full h-[220px]">
+                            <svg viewBox="0 0 1000 220" class="w-full h-full" preserveAspectRatio="none">
+                                <!-- Grid Lines -->
+                                <line x1="0" y1="40" x2="1000" y2="40" stroke="#f3f4f6" stroke-width="1"></line>
+                                <line x1="0" y1="90" x2="1000" y2="90" stroke="#f3f4f6" stroke-width="1"></line>
+                                <line x1="0" y1="140" x2="1000" y2="140" stroke="#f3f4f6" stroke-width="1"></line>
+                                <line x1="0" y1="190" x2="1000" y2="190" stroke="#f3f4f6" stroke-width="1"></line>
+                                
+                                <!-- Bars (Jan to Dec) -->
+                                <rect x="2%" y="120" width="4%" height="70" fill="#3B82F6" rx="4"></rect>
+                                <rect x="10%" y="90" width="4%" height="100" fill="#3B82F6" rx="4"></rect>
+                                <rect x="18%" y="110" width="4%" height="80" fill="#3B82F6" rx="4"></rect>
+                                <rect x="26%" y="60" width="4%" height="130" fill="#3B82F6" rx="4"></rect>
+                                <rect x="34%" y="80" width="4%" height="110" fill="#3B82F6" rx="4"></rect>
+                                <rect x="42%" y="100" width="4%" height="90" fill="#3B82F6" rx="4"></rect>
+                                <rect x="50%" y="40" width="4%" height="150" fill="#3B82F6" rx="4"></rect>
+                                <rect x="58%" y="70" width="4%" height="120" fill="#3B82F6" rx="4"></rect>
+                                <rect x="66%" y="50" width="4%" height="140" fill="#3B82F6" rx="4"></rect>
+                                <rect x="74%" y="30" width="4%" height="160" fill="#00E58F" rx="4"></rect>
+                                <rect x="82%" y="90" width="4%" height="100" fill="#3B82F6" rx="4"></rect>
+                                <rect x="90%" y="60" width="4%" height="130" fill="#3B82F6" rx="4"></rect>
+                            </svg>
+                            <!-- Tooltip (static) -->
+                            <div class="absolute top-[0px] left-[70%] bg-darkSection text-white px-2 py-1 rounded-md text-[10px] font-bold shadow-lg">
+                                $142.5k
+                            </div>
+                            
+                            <!-- X Axis Labels -->
+                            <div class="flex justify-between text-[10px] text-gray-400 mt-2 font-semibold px-2 uppercase">
+                                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Growth -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-900 mb-6">User Growth</h3>
+                        
+                        <div class="flex-1 relative w-full h-[160px]">
+                            <svg viewBox="0 0 400 160" class="w-full h-full" preserveAspectRatio="none">
+                                <path d="M0,130 C100,140 200,80 300,50 C350,30 400,60 400,60" fill="none" stroke="#FF5B37" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M0,150 C100,120 200,100 300,90 C350,85 400,40 400,40" fill="none" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="flex justify-center gap-6 mt-4">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-gray-600">
+                                <span class="w-3 h-3 rounded bg-[#3B82F6]"></span> Active Users
+                            </div>
+                            <div class="flex items-center gap-2 text-xs font-semibold text-gray-600">
+                                <span class="w-3 h-3 rounded bg-[#FF5B37]"></span> New Users
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Transactions, User Management, Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-8">
+                    
+                    <!-- Left Col (Span 2) -->
+                    <div class="lg:col-span-2 space-y-6">
+                        
+                        <!-- Recent Transactions -->
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-lg font-bold text-gray-900">Recent Transactions</h3>
+                                <button class="text-adminAccent text-xs font-semibold hover:underline" onclick="window.location.href='404.html'">View All</button>
+                            </div>
+                            
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse min-w-[600px]">
+                                    <thead>
+                                        <tr class="text-gray-400 text-[10px] uppercase tracking-wider border-b border-gray-100">
+                                            <th class="pb-2 font-bold px-3">Transaction ID</th>
+                                            <th class="pb-2 font-bold px-3">User</th>
+                                            <th class="pb-2 font-bold px-3">Type</th>
+                                            <th class="pb-2 font-bold px-3">Amount</th>
+                                            <th class="pb-2 font-bold px-3">Date</th>
+                                            <th class="pb-2 font-bold px-3 text-right">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-sm">
+                                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                                            <td class="py-3 px-3 font-mono text-xs text-gray-500">#TRX-8942</td>
+                                            <td class="py-3 px-3 font-semibold text-gray-900">Alex Morgan</td>
+                                            <td class="py-3 px-3 text-gray-500 text-xs">Payment</td>
+                                            <td class="py-3 px-3 font-bold text-gray-900">$1,250.00</td>
+                                            <td class="py-3 px-3 text-gray-500 text-xs">Oct 24, 2026</td>
+                                            <td class="py-3 px-3 text-right">
+                                                <span class="inline-block px-2 py-1 bg-green-50 text-green-600 text-[10px] font-bold rounded">Completed</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                                            <td class="py-3 px-3 font-mono text-xs text-gray-500">#TRX-8941</td>
+                                            <td class="py-3 px-3 font-semibold text-gray-900">Sarah Connor</td>
+                                            <td class="py-3 px-3 text-gray-500 text-xs">Transfer</td>
+                                            <td class="py-3 px-3 font-bold text-gray-900">$340.50</td>
+                                            <td class="py-3 px-3 text-gray-500 text-xs">Oct 24, 2026</td>
+                                            <td class="py-3 px-3 text-right">
+                                                <span class="inline-block px-2 py-1 bg-yellow-50 text-yellow-600 text-[10px] font-bold rounded">Pending</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                                            <td class="py-3 px-3 font-mono text-xs text-gray-500">#TRX-8940</td>
+                                            <td class="py-3 px-3 font-semibold text-gray-900">John Doe</td>
+                                            <td class="py-3 px-3 text-gray-500 text-xs">Withdrawal</td>
+                                            <td class="py-3 px-3 font-bold text-gray-900">$5,000.00</td>
+                                            <td class="py-3 px-3 text-gray-500 text-xs">Oct 23, 2026</td>
+                                            <td class="py-3 px-3 text-right">
+                                                <span class="inline-block px-2 py-1 bg-red-50 text-red-600 text-[10px] font-bold rounded">Failed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- User Management -->
+                        <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-lg font-bold text-gray-900">Recent Users</h3>
+                                <button class="text-adminAccent text-xs font-semibold hover:underline" onclick="window.location.href='404.html'">Manage All</button>
+                            </div>
+                            
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse min-w-[700px]">
+                                    <thead>
+                                        <tr class="text-gray-400 text-[10px] uppercase tracking-wider border-b border-gray-100">
+                                            <th class="pb-2 font-bold px-3">User</th>
+                                            <th class="pb-2 font-bold px-3">Account Type</th>
+                                            <th class="pb-2 font-bold px-3">Joined Date</th>
+                                            <th class="pb-2 font-bold px-3">Status</th>
+                                            <th class="pb-2 font-bold px-3 text-right">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-sm">
+                                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                                            <td class="py-3 px-3">
+                                                <div class="flex items-center gap-3">
+                                                    <img src="assets/images/photo-1534528741775-53994a69daeb.webp" class="w-8 h-8 rounded-full object-cover">
+                                                    <div>
+                                                        <p class="font-bold text-gray-900 text-xs">Emma Watson</p>
+                                                        <p class="text-[10px] text-gray-500">emma@example.com</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="py-3 px-3 text-gray-600 text-xs font-medium">Personal</td>
+                                            <td class="py-3 px-3 text-gray-500 text-xs">Oct 24, 2026</td>
+                                            <td class="py-3 px-3">
+                                                <span class="inline-flex items-center gap-1 text-green-600 text-[10px] font-bold"><div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div> Active</span>
+                                            </td>
+                                            <td class="py-3 px-3 text-right">
+                                                <div class="relative inline-block text-left group">
+                                                    <button class="text-gray-400 hover:text-gray-900 p-1 focus:outline-none" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                                    <div class="hidden group-hover:block absolute right-0 bottom-full mb-1 w-28 bg-white border border-gray-200 rounded-lg shadow-lg z-10 py-1">
+                                                        <a href="404.html" class="block px-4 py-1.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-adminAccent text-left">View</a>
+                                                        <a href="404.html" class="block px-4 py-1.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-adminAccent text-left">Edit</a>
+                                                        <a href="404.html" class="block px-4 py-1.5 text-xs text-red-600 hover:bg-red-50 text-left">Suspend</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                                            <td class="py-3 px-3">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">MW</div>
+                                                    <div>
+                                                        <p class="font-bold text-gray-900 text-xs">Mark Wayne</p>
+                                                        <p class="text-[10px] text-gray-500">mark@example.com</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="py-3 px-3 text-gray-600 text-xs font-medium">Business</td>
+                                            <td class="py-3 px-3 text-gray-500 text-xs">Oct 23, 2026</td>
+                                            <td class="py-3 px-3">
+                                                <span class="inline-flex items-center gap-1 text-yellow-600 text-[10px] font-bold"><div class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div> Pending</span>
+                                            </td>
+                                            <td class="py-3 px-3 text-right">
+                                                <div class="relative inline-block text-left group">
+                                                    <button class="text-gray-400 hover:text-gray-900 p-1 focus:outline-none" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                                    <div class="hidden group-hover:block absolute right-0 bottom-full mb-1 w-28 bg-white border border-gray-200 rounded-lg shadow-lg z-10 py-1">
+                                                        <a href="404.html" class="block px-4 py-1.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-adminAccent text-left">View</a>
+                                                        <a href="404.html" class="block px-4 py-1.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-adminAccent text-left">Edit</a>
+                                                        <a href="404.html" class="block px-4 py-1.5 text-xs text-red-600 hover:bg-red-50 text-left">Suspend</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Right Col: System Activity -->
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-200 h-max">
+                        <h3 class="text-lg font-bold text-gray-900 mb-6">System Activity</h3>
+                        
+                        <div class="space-y-6 relative before:absolute before:inset-0 before:ml-3 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gray-100 ml-2">
+                            
+                            <!-- Item 1 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="absolute left-[-4px] w-2.5 h-2.5 bg-adminAccent rounded-full mt-1 border-2 border-white shadow"></div>
+                                <div class="pl-4">
+                                    <p class="text-xs font-bold text-gray-900">New account created</p>
+                                    <p class="text-[10px] text-gray-500 mt-0.5">Alex Morgan joined as Premium User.</p>
+                                    <p class="text-[9px] text-gray-400 font-semibold mt-1">2 mins ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="absolute left-[-4px] w-2.5 h-2.5 bg-brandGreen rounded-full mt-1 border-2 border-white shadow"></div>
+                                <div class="pl-4">
+                                    <p class="text-xs font-bold text-gray-900">Large transaction completed</p>
+                                    <p class="text-[10px] text-gray-500 mt-0.5">$5,000 processed for John Doe.</p>
+                                    <p class="text-[9px] text-gray-400 font-semibold mt-1">15 mins ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="absolute left-[-4px] w-2.5 h-2.5 bg-blue-400 rounded-full mt-1 border-2 border-white shadow"></div>
+                                <div class="pl-4">
+                                    <p class="text-xs font-bold text-gray-900">Payment processed</p>
+                                    <p class="text-[10px] text-gray-500 mt-0.5">Automated payroll executed.</p>
+                                    <p class="text-[9px] text-gray-400 font-semibold mt-1">1 hour ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="absolute left-[-4px] w-2.5 h-2.5 bg-purple-400 rounded-full mt-1 border-2 border-white shadow"></div>
+                                <div class="pl-4">
+                                    <p class="text-xs font-bold text-gray-900">User verification completed</p>
+                                    <p class="text-[10px] text-gray-500 mt-0.5">KYC approved for Sarah Connor.</p>
+                                    <p class="text-[9px] text-gray-400 font-semibold mt-1">3 hours ago</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="relative flex items-start gap-4">
+                                <div class="absolute left-[-4px] w-2.5 h-2.5 bg-brandOrange rounded-full mt-1 border-2 border-white shadow"></div>
+                                <div class="pl-4">
+                                    <p class="text-xs font-bold text-gray-900">Support ticket opened</p>
+                                    <p class="text-[10px] text-gray-500 mt-0.5">Issue with login reported (#8821).</p>
+                                    <p class="text-[9px] text-gray-400 font-semibold mt-1">5 hours ago</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+        </div>
+        
+    <div id="view-Users" class="page-view hidden w-full h-full space-y-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Users</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Total Users</p><p class="text-xl font-bold text-gray-900 mt-1">24,580</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">New This Week</p><p class="text-xl font-bold text-gray-900 mt-1">+450</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Active Now</p><p class="text-xl font-bold text-gray-900 mt-1">1,204</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Banned</p><p class="text-xl font-bold text-gray-900 mt-1">12</p></div>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">User Directory</h3>
+            <div class="w-full overflow-x-auto"><table class="w-full text-left text-sm"><tbody><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">USR-992</td><td class="py-4 px-2 font-medium">alex@example.com</td><td class="py-4 px-2 text-gray-500">Premium</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Active</span></td></tr><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">USR-993</td><td class="py-4 px-2 font-medium">sarah@example.com</td><td class="py-4 px-2 text-gray-500">Basic</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Active</span></td></tr></tbody></table></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">User Registration Trends</h3>
+                <div class="relative w-full h-32 flex items-end">
+    <svg viewBox="0 0 100 40" class="w-full h-full" preserveAspectRatio="none">
+        <path d="M0,40 L0,25 C20,20 40,35 60,15 C80,5 90,10 100,5 L100,40 Z" fill="#00E58F" opacity="0.2"/>
+        <path d="M0,25 C20,20 40,35 60,15 C80,5 90,10 100,5" fill="none" stroke="#00E58F" stroke-width="2"/>
+    </svg>
+</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                <div><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Add New User</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Bulk Export</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Manage Roles</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-Transactions" class="page-view hidden w-full h-full space-y-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Transactions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Total Volume</p><p class="text-xl font-bold text-gray-900 mt-1">1,248</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Inflow</p><p class="text-xl font-bold text-gray-900 mt-1">$18,400</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Outflow</p><p class="text-xl font-bold text-gray-900 mt-1">$6,200</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Pending</p><p class="text-xl font-bold text-gray-900 mt-1">5</p></div>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Transaction History</h3>
+            <div class="w-full overflow-x-auto"><table class="w-full text-left text-sm"><tbody><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">TRX-01</td><td class="py-4 px-2 font-medium">Amazon Purchase</td><td class="py-4 px-2 text-gray-500">Today</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Completed</span></td></tr><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">TRX-02</td><td class="py-4 px-2 font-medium">Netflix Subscription</td><td class="py-4 px-2 text-gray-500">Yesterday</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Completed</span></td></tr></tbody></table></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">Spending by Category</h3>
+                <div class="relative w-full h-32 flex items-end justify-between px-2 gap-2">
+    <div class="w-full bg-blue-100 rounded-t-sm h-[40%]"></div>
+    <div class="w-full bg-blue-200 rounded-t-sm h-[60%]"></div>
+    <div class="w-full bg-blue-300 rounded-t-sm h-[30%]"></div>
+    <div class="w-full bg-blue-400 rounded-t-sm h-[80%]"></div>
+    <div class="w-full bg-blue-500 rounded-t-sm h-[50%]"></div>
+    <div class="w-full bg-blue-600 rounded-t-sm h-[90%]"></div>
+    <div class="w-full bg-blue-700 rounded-t-sm h-[70%]"></div>
+</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                <div><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Export to CSV</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Dispute Transaction</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Set Spending Limits</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-Accounts" class="page-view hidden w-full h-full space-y-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Accounts</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Checking</p><p class="text-xl font-bold text-gray-900 mt-1">$12,450</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Savings</p><p class="text-xl font-bold text-gray-900 mt-1">$45,000</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Joint</p><p class="text-xl font-bold text-gray-900 mt-1">$8,200</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Credit</p><p class="text-xl font-bold text-gray-900 mt-1">$15,000</p></div>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Recent Account Activity</h3>
+            <div class="w-full overflow-x-auto"><table class="w-full text-left text-sm"><tbody><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">CH-882</td><td class="py-4 px-2 font-medium">Direct Deposit</td><td class="py-4 px-2 text-gray-500">Oct 24</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Cleared</span></td></tr><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">SV-102</td><td class="py-4 px-2 font-medium">Interest Credit</td><td class="py-4 px-2 text-gray-500">Oct 01</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Cleared</span></td></tr></tbody></table></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">Balance History</h3>
+                <div class="relative w-full h-32 flex items-center">
+    <svg viewBox="0 0 100 40" class="w-full h-full overflow-visible" preserveAspectRatio="none">
+        <path d="M0,30 L20,10 L40,25 L60,15 L80,35 L100,5" fill="none" stroke="#FF5B37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="10" r="2" fill="#FF5B37"/>
+        <circle cx="60" cy="15" r="2" fill="#FF5B37"/>
+        <circle cx="100" cy="5" r="2" fill="#FF5B37"/>
+    </svg>
+</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                <div><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Open New Account</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Download Statements</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Manage Linked Banks</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-Payments" class="page-view hidden w-full h-full space-y-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Payments</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Scheduled</p><p class="text-xl font-bold text-gray-900 mt-1">4</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Paid This Month</p><p class="text-xl font-bold text-gray-900 mt-1">$2,100</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Upcoming</p><p class="text-xl font-bold text-gray-900 mt-1">$850</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Failed</p><p class="text-xl font-bold text-gray-900 mt-1">0</p></div>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Upcoming Payments</h3>
+            <div class="w-full overflow-x-auto"><table class="w-full text-left text-sm"><tbody><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">PAY-99</td><td class="py-4 px-2 font-medium">Electric Bill</td><td class="py-4 px-2 text-gray-500">Oct 28</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Scheduled</span></td></tr><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">PAY-100</td><td class="py-4 px-2 font-medium">Internet</td><td class="py-4 px-2 text-gray-500">Oct 30</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Scheduled</span></td></tr></tbody></table></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">Payment Trends</h3>
+                <div class="relative w-full h-32 flex items-center justify-between px-2 gap-2">
+    <div class="w-full bg-brandGreen/60 rounded-sm h-[60%] translate-y-[-20%]"></div>
+    <div class="w-full bg-red-400/60 rounded-sm h-[30%] translate-y-[20%]"></div>
+    <div class="w-full bg-brandGreen/60 rounded-sm h-[80%] translate-y-[-30%]"></div>
+    <div class="w-full bg-brandGreen/60 rounded-sm h-[40%] translate-y-[-10%]"></div>
+    <div class="w-full bg-red-400/60 rounded-sm h-[50%] translate-y-[30%]"></div>
+    <div class="w-full bg-brandGreen/60 rounded-sm h-[90%] translate-y-[-40%]"></div>
+</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                <div><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Add New Biller</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Setup Autopay</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Payment History</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-Reports" class="page-view hidden w-full h-full space-y-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Reports</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Generated</p><p class="text-xl font-bold text-gray-900 mt-1">142</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Scheduled</p><p class="text-xl font-bold text-gray-900 mt-1">5</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Storage Used</p><p class="text-xl font-bold text-gray-900 mt-1">4.2GB</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">API Calls</p><p class="text-xl font-bold text-gray-900 mt-1">84k</p></div>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Recent Reports</h3>
+            <div class="w-full overflow-x-auto"><table class="w-full text-left text-sm"><tbody><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">REP-10</td><td class="py-4 px-2 font-medium">Q3 Financials</td><td class="py-4 px-2 text-gray-500">Oct 1</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Ready</span></td></tr><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">REP-11</td><td class="py-4 px-2 font-medium">User Churn</td><td class="py-4 px-2 text-gray-500">Oct 15</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Ready</span></td></tr></tbody></table></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">Report Access Logs</h3>
+                <div class="relative w-full h-32 flex items-end">
+    <svg viewBox="0 0 100 40" class="w-full h-full" preserveAspectRatio="none">
+        <path d="M0,40 L0,25 C20,20 40,35 60,15 C80,5 90,10 100,5 L100,40 Z" fill="#00E58F" opacity="0.2"/>
+        <path d="M0,25 C20,20 40,35 60,15 C80,5 90,10 100,5" fill="none" stroke="#00E58F" stroke-width="2"/>
+    </svg>
+</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                <div><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Create Custom Report</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Manage Schedules</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">System Logs</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-Analytics" class="page-view hidden w-full h-full space-y-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Analytics</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Net Worth</p><p class="text-xl font-bold text-gray-900 mt-1">$84,250</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">MoM Growth</p><p class="text-xl font-bold text-gray-900 mt-1">+8.4%</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Top Expense</p><p class="text-xl font-bold text-gray-900 mt-1">Housing</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Savings Rate</p><p class="text-xl font-bold text-gray-900 mt-1">22%</p></div>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Detailed Metrics</h3>
+            <div class="w-full overflow-x-auto"><table class="w-full text-left text-sm"><tbody><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">MET-1</td><td class="py-4 px-2 font-medium">Income Analysis</td><td class="py-4 px-2 text-gray-500">Q3 2026</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Available</span></td></tr><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">MET-2</td><td class="py-4 px-2 font-medium">Expense Breakdown</td><td class="py-4 px-2 text-gray-500">Q3 2026</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Available</span></td></tr></tbody></table></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">Financial Projections</h3>
+                <div class="relative w-full h-32 flex items-end justify-between px-2 gap-2">
+    <div class="w-full bg-blue-100 rounded-t-sm h-[40%]"></div>
+    <div class="w-full bg-blue-200 rounded-t-sm h-[60%]"></div>
+    <div class="w-full bg-blue-300 rounded-t-sm h-[30%]"></div>
+    <div class="w-full bg-blue-400 rounded-t-sm h-[80%]"></div>
+    <div class="w-full bg-blue-500 rounded-t-sm h-[50%]"></div>
+    <div class="w-full bg-blue-600 rounded-t-sm h-[90%]"></div>
+    <div class="w-full bg-blue-700 rounded-t-sm h-[70%]"></div>
+</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                <div><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Generate PDF Report</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Connect External Accounts</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Custom Dashboards</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-Support" class="page-view hidden w-full h-full space-y-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Support</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Open Tickets</p><p class="text-xl font-bold text-gray-900 mt-1">24</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Avg Response</p><p class="text-xl font-bold text-gray-900 mt-1">2.4h</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Resolved</p><p class="text-xl font-bold text-gray-900 mt-1">1,402</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">CSAT</p><p class="text-xl font-bold text-gray-900 mt-1">4.8/5</p></div>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Active Tickets</h3>
+            <div class="w-full overflow-x-auto"><table class="w-full text-left text-sm"><tbody><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">TKT-101</td><td class="py-4 px-2 font-medium">Login Issue</td><td class="py-4 px-2 text-gray-500">High Priority</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Open</span></td></tr><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">TKT-102</td><td class="py-4 px-2 font-medium">Billing Question</td><td class="py-4 px-2 text-gray-500">Medium</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Pending</span></td></tr></tbody></table></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">Ticket Volume</h3>
+                <div class="relative w-full h-32 flex items-center">
+    <svg viewBox="0 0 100 40" class="w-full h-full overflow-visible" preserveAspectRatio="none">
+        <path d="M0,30 L20,10 L40,25 L60,15 L80,35 L100,5" fill="none" stroke="#FF5B37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="10" r="2" fill="#FF5B37"/>
+        <circle cx="60" cy="15" r="2" fill="#FF5B37"/>
+        <circle cx="100" cy="5" r="2" fill="#FF5B37"/>
+    </svg>
+</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                <div><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">View All Tickets</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Update Knowledgebase</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Agent Performance</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view-Settings" class="page-view hidden w-full h-full space-y-6">
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Settings</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Profile Status</p><p class="text-xl font-bold text-gray-900 mt-1">100%</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Security</p><p class="text-xl font-bold text-gray-900 mt-1">High</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">2FA</p><p class="text-xl font-bold text-gray-900 mt-1">Enabled</p></div><div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100"><p class="text-xs text-gray-500 uppercase font-semibold">Devices</p><p class="text-xl font-bold text-gray-900 mt-1">2</p></div>
+            </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Recent Login Activity</h3>
+            <div class="w-full overflow-x-auto"><table class="w-full text-left text-sm"><tbody><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">LOG-1</td><td class="py-4 px-2 font-medium">MacBook Pro - NY</td><td class="py-4 px-2 text-gray-500">Today 08:00</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Success</span></td></tr><tr class="border-b border-gray-50"><td class="py-4 px-2 text-gray-500">LOG-2</td><td class="py-4 px-2 font-medium">iPhone 15 - NY</td><td class="py-4 px-2 text-gray-500">Yesterday</td><td class="py-4 px-2 text-right"><span class="px-2 py-1 bg-green-50 text-green-600 rounded text-[10px] font-bold">Success</span></td></tr></tbody></table></div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-6">Security Overview</h3>
+                <div class="relative w-full h-32 flex items-center justify-between px-2 gap-2">
+    <div class="w-full bg-brandGreen/60 rounded-sm h-[60%] translate-y-[-20%]"></div>
+    <div class="w-full bg-red-400/60 rounded-sm h-[30%] translate-y-[20%]"></div>
+    <div class="w-full bg-brandGreen/60 rounded-sm h-[80%] translate-y-[-30%]"></div>
+    <div class="w-full bg-brandGreen/60 rounded-sm h-[40%] translate-y-[-10%]"></div>
+    <div class="w-full bg-red-400/60 rounded-sm h-[50%] translate-y-[30%]"></div>
+    <div class="w-full bg-brandGreen/60 rounded-sm h-[90%] translate-y-[-40%]"></div>
+</div>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
+                <div><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Change Password</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Update Profile</button><button onclick="window.location.href='404.html'" class="w-full text-left px-4 py-3 bg-gray-50 hover:bg-brandGreen hover:text-white rounded-lg text-sm font-semibold text-gray-700 transition-colors mb-2">Notification Preferences</button></div>
+            </div>
+        </div>
+    </div>
+
+</main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Current Date formatting
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+
+        // Mobile Sidebar Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const body = document.body;
+
+        function openSidebar() {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+            // Safe body overflow handling that doesn't break desktop
+            body.classList.add('overflow-hidden');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+            // Remove overflow-hidden completely to restore natural scrolling if on mobile
+            body.classList.remove('overflow-hidden');
+        }
+
+        btn.addEventListener('click', openSidebar);
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // Responsive handling to clean up classes if viewport changes
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                body.classList.remove('overflow-hidden');
+                overlay.classList.add('hidden');
+                sidebar.classList.remove('-translate-x-full');
+            } else {
+                if (!overlay.classList.contains('hidden')) {
+                    body.classList.add('overflow-hidden');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            }
+        });
+    </script>
+<script>
+        // SPA Navigation Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('#sidebar a');
+            const viewDashboard = document.getElementById('view-dashboard');
+            const viewPlaceholder = document.getElementById('view-placeholder');
+            const placeholderTitle = document.getElementById('placeholder-title');
+            
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const text = this.textContent.trim();
+                    if(text === 'Logout'  ) return;
+                    
+                    e.preventDefault();
+                    
+                    // Reset all links to inactive
+                    sidebarLinks.forEach(a => {
+                        const t = a.textContent.trim();
+                        if(t === 'Logout'  ) return;
+                        
+                        if(true) {
+                            a.className = 'flex items-center gap-3 px-4 py-2.5 hover:bg-gray-800 hover:text-white rounded-lg font-medium transition-colors';
+                        } else {
+                            a.className = 'flex items-center gap-3 px-4 py-3 hover:bg-gray-800 hover:text-white rounded-xl font-medium transition-colors';
+                        }
+                    });
+                    
+                    // Set clicked link to active
+                    if(true) {
+                        this.className = 'flex items-center gap-3 px-4 py-2.5 bg-adminAccent/10 text-adminAccent rounded-lg font-semibold transition-colors';
+                    } else {
+                        this.className = 'flex items-center gap-3 px-4 py-3 bg-brandGreen/10 text-brandGreen rounded-xl font-semibold transition-colors';
+                    }
+                    
+                    // Switch views
+                    // Hide all page-views
+                    document.querySelectorAll('.page-view').forEach(view => {
+                        view.classList.add('hidden');
+                    });
+                    
+                    const dashboardId = (text === 'Dashboard' || text === 'Overview') ? 'view-dashboard' : 'view-' + text.replace(/\s+/g, '');
+                    const targetView = document.getElementById(dashboardId);
+                    
+                    if (targetView) {
+                        targetView.classList.remove('hidden');
+                    } else if (viewDashboard) {
+                        viewDashboard.classList.remove('hidden');
+                    }
+                    // Close sidebar on mobile after clicking
+                    if (window.innerWidth < 1024) {
+                        const sb = document.getElementById('sidebar');
+                        const overlay = document.getElementById('sidebar-overlay');
+                        if (sb && !sb.classList.contains('-translate-x-full')) {
+                            if (typeof closeSidebar === 'function') {
+                                closeSidebar();
+                            } else if (typeof toggleSidebar === 'function') {
+                                toggleSidebar();
+                            } else {
+                                sb.classList.add('-translate-x-full');
+                                if (overlay) overlay.classList.add('hidden');
+                                document.body.classList.remove('overflow-hidden');
+                            }
+                        }
+                    }
+                });
+            });
+        });
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

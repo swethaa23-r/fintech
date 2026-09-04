@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - stackly</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        lightYellow: '#FFF9DA',
+                        lightGreen: '#D1FBE1',
+                        lightPeach: '#FFE6D6',
+                        darkSection: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-white text-gray-900 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 z-[60] w-full bg-white/95 backdrop-blur-md shadow-sm transition-all">
+    <nav class="flex justify-between items-center py-4 px-6 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer">
+            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                <span class="font-bold">S</span>
+            </div>
+            stackly
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <a href="index.html" class="hover:text-black transition-colors">Home</a>
+            <a href="about.html" class="text-brandGreen font-semibold">About Us</a>
+            <a href="blog.html" class="hover:text-black transition-colors">Blog</a>
+            <a href="services.html" class="hover:text-black transition-colors">Services</a>
+            <a href="contact.html" class="hover:text-black transition-colors">Contact Us</a>
+        </div>
+        <div class="hidden md:block">
+            <button class="bg-brandGreen text-white px-8 py-2.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30 tracking-wide" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    
+        <!-- Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-900 focus:outline-none z-[60] relative transition-transform duration-300 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+    <div class="h-[76px] w-full"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex-col items-center pt-28 pb-10 gap-6 justify-start text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
+        <a href="index.html" class="hover:text-brandGreen mobile-link">Home</a>
+        <a href="about.html" class="hover:text-brandGreen mobile-link">About Us</a>
+        <a href="blog.html" class="hover:text-brandGreen mobile-link">Blog</a>
+        <a href="services.html" class="hover:text-brandGreen mobile-link">Services</a>
+        <a href="contact.html" class="hover:text-brandGreen mobile-link">Contact Us</a>
+        <button class="bg-brandGreen text-white px-10 py-3.5 rounded-full font-bold shadow-lg shadow-brandGreen/30 mt-4 text-lg w-3/4 max-w-xs" onclick="window.location.href='login.html'">Login</button>
+    </div>
+
+
+    <!-- About Hero -->
+    <section class="py-24 px-6 max-w-4xl mx-auto text-center">
+        <p class="text-gray-500 text-sm mb-4 font-semibold" data-aos="fade-up">About us</p>
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-8" data-aos="fade-up" data-aos-delay="100">
+            The power of <span class="underline decoration-brandOrange decoration-4 underline-offset-4">financial</span> forecasting for business success
+        </h1>
+        <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+            stackly prioritizes the security of users' financial data. The platform employs advanced encryption methods to safeguard information.
+        </p>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-16 items-center mb-24">
+            <div class="lg:w-1/2" data-aos="fade-right">
+                <div class="rounded-3xl overflow-hidden h-[500px] shadow-xl">
+                    <img src="assets/images/photo-1522071820081-009f0129c71c.webp" alt="Team Meeting" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2" data-aos="fade-left">
+                <p class="text-brandOrange text-sm mb-4 font-semibold uppercase tracking-wider">Who we are</p>
+                <h2 class="text-4xl font-bold mb-6 text-gray-900 leading-tight">We provide solutions for your business</h2>
+                <p class="text-gray-500 mb-10 leading-relaxed">
+                    stackly is a cutting-edge Accounting SaaS platform designed to streamline financial processes and empower businesses of all sizes.
+                </p>
+
+                <div class="space-y-8">
+                    <div class="flex gap-4">
+                        <div class="text-gray-400 mt-1"><i class="fa-regular fa-circle-check text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Flexible hours</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Deeply understand the technology and features of the product area to which you are assigned.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="text-gray-400 mt-1"><i class="fa-regular fa-circle-check text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Flexible hours</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Deeply understand the technology and features of the product area to which you are assigned.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center border-b border-gray-100 pb-24" data-aos="fade-up">
+            <div>
+                <h3 class="text-6xl font-bold text-gray-900 mb-2">
+                    <sup class="text-3xl">$</sup><span class="counter" data-target="5.6" data-decimals="1">0.0</span><sup class="text-3xl">+</sup>
+                </h3>
+                <p class="text-gray-500 font-medium">Revenue generated</p>
+            </div>
+            <div>
+                <h3 class="text-6xl font-bold text-gray-900 mb-2">
+                    <span class="counter" data-target="4.8" data-decimals="1">0.0</span><sup class="text-3xl">+</sup>
+                </h3>
+                <p class="text-gray-500 font-medium">Clients all over the world</p>
+            </div>
+            <div>
+                <h3 class="text-6xl font-bold text-gray-900 mb-2">
+                    <span class="counter" data-target="3.8" data-decimals="1">0.0</span><sup class="text-3xl">+</sup>
+                </h3>
+                <p class="text-gray-500 font-medium">Team members</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do (Light Mode Tabs) -->
+    <section class="py-24 w-full overflow-hidden bg-white text-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-brandOrange text-sm mb-4 font-semibold uppercase tracking-wider">What we do</p>
+                <h2 class="text-4xl lg:text-5xl font-bold leading-tight mb-10">
+                    Most easiest way to <span class="underline decoration-brandOrange decoration-4 underline-offset-4">manage</span> <br/> your finance
+                </h2>
+                
+                <div class="flex justify-center items-center gap-4 flex-wrap">
+                    <button class="about-tab-btn active px-8 py-3 rounded-full border border-gray-200 font-semibold transition-all text-sm bg-gray-900 text-white" data-target="about-spendings">Spendings</button>
+                    <button class="about-tab-btn px-8 py-3 rounded-full border border-gray-200 font-semibold transition-all text-sm text-gray-600 hover:border-gray-400 hover:text-gray-900" data-target="about-transactions">Transactions</button>
+                    <button class="about-tab-btn px-8 py-3 rounded-full border border-gray-200 font-semibold transition-all text-sm text-gray-600 hover:border-gray-400 hover:text-gray-900" data-target="about-payroll">Payroll</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 relative min-h-[350px] w-full" data-aos="fade-right">
+                    
+                    <!-- Spendings Info -->
+                    <div id="about-spendings-info" class="about-tab-info active transition-opacity duration-500">
+                        <h3 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">Control your spending, make goals, and achieve them</h3>
+                        <p class="text-gray-500 mb-8 leading-relaxed">Gain valuable data-driven insights into your business performance. Our robust analytics tools help you make informed decisions and optimize your strategies.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-2 mb-10 text-sm font-medium text-gray-600">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> No transaction limit</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Fast & easy transactions</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Secure payments</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Track & pay invoices</div>
+                        </div>
+                        <button class="bg-brandGreen text-white px-8 py-3.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20" onclick="window.location.href='404.html'">More details</button>
+                    </div>
+
+                    <!-- Transactions Info -->
+                    <div id="about-transactions-info" class="about-tab-info hidden opacity-0 transition-opacity duration-500">
+                        <h3 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">Effortlessly track every single transaction</h3>
+                        <p class="text-gray-500 mb-8 leading-relaxed">Monitor your cash flow with real-time updates and seamless integration across all your banking platforms. Never miss a payment again.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-2 mb-10 text-sm font-medium text-gray-600">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Instant notifications</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Auto categorization</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Export to CSV</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Cross-border payments</div>
+                        </div>
+                        <button class="bg-brandGreen text-white px-8 py-3.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20" onclick="window.location.href='404.html'">More details</button>
+                    </div>
+
+                    <!-- Payroll Info -->
+                    <div id="about-payroll-info" class="about-tab-info hidden opacity-0 transition-opacity duration-500">
+                        <h3 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">Automate your team's payroll process</h3>
+                        <p class="text-gray-500 mb-8 leading-relaxed">Pay your employees on time, every time. Calculate taxes automatically and ensure compliance with local regulations effortlessly.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-2 mb-10 text-sm font-medium text-gray-600">
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> 1-click payroll</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Auto tax filings</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Contractor payments</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandGreen text-lg"></i> Direct deposits</div>
+                        </div>
+                        <button class="bg-brandGreen text-white px-8 py-3.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/20" onclick="window.location.href='404.html'">More details</button>
+                    </div>
+                </div>
+
+                <!-- Right Content (Mockups) -->
+                <div class="lg:w-1/2 w-full" data-aos="fade-left">
+                    <div class="bg-white rounded-3xl p-8 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-gray-100 relative min-h-[420px] w-full">
+                        <!-- Spendings Mockup (Bar + Line) -->
+                        <div id="about-spendings-mock" class="about-tab-mock active transition-opacity duration-500 absolute inset-8">
+                            <div class="flex justify-between items-center mb-8">
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Corporate Spendings</h4>
+                                    <p class="text-xs font-semibold text-gray-500 mt-1"><i class="fa-solid fa-circle-check text-gray-800"></i> 18%</p>
+                                </div>
+                                <div class="flex gap-4 text-xs font-semibold text-gray-500">
+                                    <span class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-full bg-brandGreen"></div> This month</span>
+                                    <span class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-full bg-brandOrange"></div> Previous</span>
+                                </div>
+                            </div>
+                            
+                            <div class="relative h-56 w-full flex text-[10px] text-gray-400 font-medium">
+                                <div class="flex flex-col justify-between items-end pr-4 h-full pb-6">
+                                    <span>90k</span><span>60k</span><span>30k</span><span>10k</span><span>0</span>
+                                </div>
+                                <div class="flex-1 border-l border-gray-100 relative">
+                                    <!-- Grid lines -->
+                                    <div class="absolute w-full h-full flex flex-col justify-between pb-6 opacity-30">
+                                        <div class="w-full border-b border-gray-200"></div><div class="w-full border-b border-gray-200"></div>
+                                        <div class="w-full border-b border-gray-200"></div><div class="w-full border-b border-gray-200"></div><div class="w-full border-b border-gray-200"></div>
+                                    </div>
+                                    
+                                    <!-- Bar/Line Container -->
+                                    <div class="absolute inset-0 flex justify-between items-end pb-6 px-4 z-10">
+                                        <!-- Bars -->
+                                        <div class="w-6 flex flex-col justify-end h-full"><div class="w-full bg-brandOrange h-[35%]"></div><div class="w-full bg-brandGreen h-[15%]"></div></div>
+                                        <div class="w-6 flex flex-col justify-end h-full"><div class="w-full bg-brandOrange h-[60%]"></div><div class="w-full bg-brandGreen h-[20%]"></div></div>
+                                        <div class="w-6 flex flex-col justify-end h-full"><div class="w-full bg-brandOrange h-[45%]"></div><div class="w-full bg-brandGreen h-[30%]"></div></div>
+                                        <div class="w-6 flex flex-col justify-end h-full"><div class="w-full bg-brandOrange h-[70%]"></div><div class="w-full bg-brandGreen h-[40%]"></div></div>
+                                        <div class="w-6 flex flex-col justify-end h-full"><div class="w-full bg-brandOrange h-[55%]"></div><div class="w-full bg-brandGreen h-[35%]"></div></div>
+                                    </div>
+                                    
+                                    <!-- Overlay Line Chart SVG -->
+                                    <svg class="absolute inset-0 w-full h-[calc(100%-1.5rem)] z-20 pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <path d="M5 60 L25 40 L45 55 L65 35 L85 45" fill="none" stroke="#1f2937" stroke-width="2" stroke-linejoin="round"/>
+                                    </svg>
+
+                                    <!-- X-axis Labels -->
+                                    <div class="absolute bottom-0 left-0 w-full flex justify-between px-4">
+                                        <span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transactions Mockup (Double Lines) -->
+                        <div id="about-transactions-mock" class="about-tab-mock hidden opacity-0 transition-opacity duration-500 absolute inset-8">
+                            <div class="flex justify-between items-center mb-8">
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Corporate Spendings</h4>
+                                    <p class="text-xs font-semibold text-gray-500 mt-1"><i class="fa-solid fa-circle-check text-gray-800"></i> 18%</p>
+                                </div>
+                                <div class="flex gap-4 text-xs font-semibold text-gray-500">
+                                    <span class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-full bg-brandGreen"></div> This month</span>
+                                    <span class="flex items-center gap-1"><div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div> Previous</span>
+                                </div>
+                            </div>
+                            
+                            <div class="relative h-56 w-full flex text-[10px] text-gray-400 font-medium">
+                                <div class="flex flex-col justify-between items-end pr-4 h-full pb-6">
+                                    <span>90k</span><span>60k</span><span>30k</span><span>10k</span><span>0</span>
+                                </div>
+                                <div class="flex-1 border-l border-gray-100 relative">
+                                    <!-- Grid lines -->
+                                    <div class="absolute w-full h-full flex flex-col justify-between pb-6 opacity-30">
+                                        <div class="w-full border-b border-gray-200"></div><div class="w-full border-b border-gray-200"></div>
+                                        <div class="w-full border-b border-gray-200"></div><div class="w-full border-b border-gray-200"></div><div class="w-full border-b border-gray-200"></div>
+                                    </div>
+                                    
+                                    <!-- Overlay Double Line Charts -->
+                                    <svg class="absolute inset-0 w-full h-[calc(100%-1.5rem)] z-10" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <!-- Green Line -->
+                                        <path d="M5 60 Q15 50 25 55 T45 40 T65 65 T85 45 T100 50" fill="none" stroke="#00E58F" stroke-width="2.5" stroke-linejoin="round"/>
+                                        <!-- Yellow Line -->
+                                        <path d="M5 70 Q15 80 25 65 T45 80 T65 50 T85 75 T100 60" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-linejoin="round"/>
+                                    </svg>
+                                    
+                                    <!-- Tooltip Indicator -->
+                                    <div class="absolute top-[40%] left-[45%] z-20 flex flex-col items-center">
+                                        <div class="bg-gray-900 text-white text-[10px] px-2 py-1 rounded font-bold mb-1 shadow-lg">$224.00</div>
+                                        <div class="h-16 w-px bg-dashed border-l border-dashed border-gray-400 relative">
+                                            <div class="absolute -top-1 -left-1.5 w-3 h-3 bg-gray-900 rounded-full border-2 border-white"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- X-axis Labels -->
+                                    <div class="absolute bottom-0 left-0 w-full flex justify-between px-4">
+                                        <span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payroll Mockup (Stacked Bar) -->
+                        <div id="about-payroll-mock" class="about-tab-mock hidden opacity-0 transition-opacity duration-500 absolute inset-8">
+                            <div class="flex justify-between items-center mb-8 border-b border-gray-100 pb-4">
+                                <h4 class="font-bold text-lg text-gray-900">Payments Forecast</h4>
+                                <div class="w-6 h-6 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs"><i class="fa-solid fa-info"></i></div>
+                            </div>
+                            
+                            <div class="relative h-56 w-full flex text-[10px] text-gray-400 font-medium">
+                                <div class="flex flex-col justify-between items-end pr-4 h-full pb-6 text-[8px]">
+                                    <span>2500k</span><span>2000k</span><span>1500k</span><span>1000k</span><span>750k</span><span>500k</span><span>250k</span><span>0k</span>
+                                </div>
+                                <div class="flex-1 border-l border-gray-100 relative">
+                                    <!-- Grid lines -->
+                                    <div class="absolute w-full h-full flex flex-col justify-between pb-6 opacity-30 text-[8px]">
+                                        <div class="w-full border-b border-gray-200 h-full"></div><div class="w-full border-b border-gray-200 h-full"></div>
+                                        <div class="w-full border-b border-gray-200 h-full"></div><div class="w-full border-b border-gray-200 h-full"></div>
+                                        <div class="w-full border-b border-gray-200 h-full"></div><div class="w-full border-b border-gray-200 h-full"></div>
+                                        <div class="w-full border-b border-gray-200 h-full"></div>
+                                    </div>
+                                    
+                                    <!-- Bar Container -->
+                                    <div class="absolute inset-0 flex justify-between items-end pb-6 px-8 z-10">
+                                        <!-- Stacked Bars -->
+                                        <div class="w-8 flex flex-col justify-end h-full"><div class="w-full bg-brandGreen h-[20%]"></div><div class="w-full bg-yellow-400 h-[10%]"></div><div class="w-full bg-red-400 h-[35%]"></div></div>
+                                        <div class="w-8 flex flex-col justify-end h-full"><div class="w-full bg-brandGreen h-[15%]"></div><div class="w-full bg-yellow-400 h-[25%]"></div><div class="w-full bg-red-400 h-[40%]"></div></div>
+                                        <div class="w-8 flex flex-col justify-end h-full"><div class="w-full bg-brandGreen h-[25%]"></div><div class="w-full bg-yellow-400 h-[15%]"></div><div class="w-full bg-red-400 h-[45%]"></div></div>
+                                        <div class="w-8 flex flex-col justify-end h-full"><div class="w-full bg-brandGreen h-[10%]"></div><div class="w-full bg-yellow-400 h-[10%]"></div><div class="w-full bg-red-400 h-[30%]"></div></div>
+                                    </div>
+
+                                    <!-- X-axis Labels -->
+                                    <div class="absolute bottom-0 left-0 w-full flex justify-between px-8 text-[8px]">
+                                        <span>Oct, 2021</span><span>Nov, 2021</span><span>Dec, 2021</span><span>Jan, 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (Copied from index.html) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto text-center mt-10">
+        <p class="text-brandOrange text-sm mb-2 font-semibold uppercase tracking-wider" data-aos="fade-up">Why choose us</p>
+        <h2 class="text-4xl lg:text-5xl font-bold max-w-2xl mx-auto leading-tight mb-20 text-gray-900" data-aos="fade-up" data-aos-delay="100">
+            Why stackly is the best <br/>
+            <span class="underline decoration-brandOrange decoration-4 underline-offset-4">choice</span> for your company
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8">
+            <div data-aos="fade-up" data-aos-delay="100" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightYellow rounded-full flex items-center justify-center mb-6 text-yellow-600 shadow-sm text-xl">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Financial data analysis</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+            
+            <div data-aos="fade-up" data-aos-delay="200" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightGreen rounded-full flex items-center justify-center mb-6 text-brandGreen shadow-sm text-xl">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Real time report</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightPeach rounded-full flex items-center justify-center mb-6 text-brandOrange shadow-sm text-xl">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Business kits</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightPeach rounded-full flex items-center justify-center mb-6 text-brandOrange shadow-sm text-xl">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Digital wallet</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightYellow rounded-full flex items-center justify-center mb-6 text-yellow-600 shadow-sm text-xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">Secure transactions</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
+                <div class="w-16 h-16 bg-lightGreen rounded-full flex items-center justify-center mb-6 text-brandGreen shadow-sm text-xl">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3 text-gray-900">24/7 support</h3>
+                <p class="text-gray-500 text-sm px-4 leading-relaxed mb-4">Our platform offers comprehensive solutions, data analytics and payments.</p>
+                <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-1 text-gray-800">Learn more <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="pt-24 pb-48 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-16 text-gray-900" data-aos="fade-up">Leadership</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+            <!-- Member 1 -->
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="leadership-card bg-gray-200 rounded-3xl h-[280px] mb-6 overflow-hidden flex items-end justify-center pt-8 relative cursor-pointer group">
+                    <img src="assets/images/photo-1560250097-0b93528c311a.webp" alt="Alex Turner" class="h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-105">
+                    
+                    <!-- Social Overlay -->
+                    <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
+                        <div class="flex gap-4">
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">Alex Turner</h3>
+                <p class="text-gray-500 text-sm font-medium">Cofounder & CEO</p>
+            </div>
+            
+            <!-- Member 2 -->
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="leadership-card bg-gray-200 rounded-3xl h-[280px] mb-6 overflow-hidden flex items-end justify-center pt-8 relative cursor-pointer group">
+                    <img src="assets/images/photo-1573496359142-b8d87734a5a2.webp" alt="Olivia Gowen" class="h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-105">
+                    
+                    <!-- Social Overlay -->
+                    <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
+                        <div class="flex gap-4">
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">Olivia Gowen</h3>
+                <p class="text-gray-500 text-sm font-medium">Cofounder & CFO</p>
+            </div>
+
+            <!-- Member 3 -->
+            <div data-aos="fade-up" data-aos-delay="300">
+                <div class="leadership-card bg-gray-200 rounded-3xl h-[280px] mb-6 overflow-hidden flex items-end justify-center pt-8 relative cursor-pointer group">
+                    <img src="assets/images/photo-1519085360753-af0119f7cbe7.webp" alt="David Nicholas" class="h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-105">
+                    
+                    <!-- Social Overlay -->
+                    <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
+                        <div class="flex gap-4">
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">David Nicholas</h3>
+                <p class="text-gray-500 text-sm font-medium">Project manager</p>
+            </div>
+
+            <!-- Member 4 -->
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="leadership-card bg-gray-200 rounded-3xl h-[280px] mb-6 overflow-hidden flex items-end justify-center pt-8 relative cursor-pointer group">
+                    <img src="assets/images/photo-1573497019940-1c28c88b4f3e.webp" alt="Sophia Garcia" class="h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-105">
+                    
+                    <!-- Social Overlay -->
+                    <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
+                        <div class="flex gap-4">
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">Sophia Garcia</h3>
+                <p class="text-gray-500 text-sm font-medium">Head of marketing</p>
+            </div>
+
+            <!-- Member 5 -->
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="leadership-card bg-gray-200 rounded-3xl h-[280px] mb-6 overflow-hidden flex items-end justify-center pt-8 relative cursor-pointer group">
+                    <img src="assets/images/photo-1472099645785-5658abf4ff4e.webp" alt="Liam Wilson" class="h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-105">
+                    
+                    <!-- Social Overlay -->
+                    <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
+                        <div class="flex gap-4">
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">Liam Wilson</h3>
+                <p class="text-gray-500 text-sm font-medium">Senior UI/UX designer</p>
+            </div>
+
+            <!-- Member 6 -->
+            <div data-aos="fade-up" data-aos-delay="300">
+                <div class="leadership-card bg-gray-200 rounded-3xl h-[280px] mb-6 overflow-hidden flex items-end justify-center pt-8 relative cursor-pointer group">
+                    <img src="assets/images/photo-1507003211169-0a1dd7228f2d.webp" alt="Daniel Curtis" class="h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-500 group-hover:scale-105">
+                    
+                    <!-- Social Overlay -->
+                    <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
+                        <div class="flex gap-4">
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">Daniel Curtis</h3>
+                <p class="text-gray-500 text-sm font-medium">Senior developer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer + CTA overlapping (Copied exactly from index.html) -->
+    <div class="relative mt-24">
+        <!-- CTA Banner -->
+        <div class="absolute left-6 right-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 top-0 -translate-y-1/2 z-20 max-w-5xl lg:w-full">
+            <div class="bg-brandGreen rounded-[2rem] p-6 md:p-12 text-center text-white shadow-2xl relative overflow-hidden" data-aos="zoom-in">
+                <!-- Background decorative elements -->
+                <i class="fa-solid fa-money-bill-wave absolute -right-10 -bottom-10 text-9xl opacity-10 rotate-12"></i>
+                <i class="fa-solid fa-chart-line absolute -left-10 -top-10 text-9xl opacity-10 -rotate-12"></i>
+                
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Manage your <span class="underline decoration-brandOrange decoration-4 underline-offset-4">finances</span> <br/> & save time
+                </h2>
+                <p class="text-gray-800 mb-8 max-w-lg mx-auto font-medium">
+                    SaaS providers often offer customer support to assist with any technical issues or questions you may have.
+                </p>
+                
+                <form action="404.html" method="GET" class="flex max-w-md mx-auto relative">
+                    <input type="email" placeholder="Enter your email" class="w-full bg-white/20 border border-white/30 text-gray-900 placeholder-gray-700 rounded-full py-4 pl-6 pr-32 outline-none focus:bg-white/40 transition-colors" required>
+                    <button type="submit" class="absolute right-1.5 top-1.5 bottom-1.5 bg-gray-900 text-white rounded-full px-6 font-semibold hover:bg-gray-800 transition-colors">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dark Footer -->
+        <footer class="bg-darkSection text-white pt-56 pb-12 px-6 lg:px-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-16 text-center md:text-left">
+                    
+                    <!-- Col 1: Brand -->
+                    <div class="lg:col-span-6 bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col items-center md:items-start">
+                        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter mb-6 justify-center md:justify-start">
+                            <div class="w-8 h-8 bg-brandOrange text-white flex items-center justify-center rounded-lg">
+                                <span class="font-bold">S</span>
+                            </div>
+                            stackly
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 pr-0 md:pr-4">We're just announced new feature that would help you increase your experience of using metadata.</p>
+                        <div class="flex gap-3 justify-center md:justify-start">
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Quick links</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li><a href="index.html" class="hover:text-brandGreen transition-colors">Home</a></li>
+                            <li><a href="about.html" class="hover:text-brandGreen transition-colors">About us</a></li>
+                            <li><a href="services.html" class="hover:text-brandGreen transition-colors">Services</a></li>
+                            <li><a href="blog.html" class="hover:text-brandGreen transition-colors">Blog</a></li>
+                            <li><a href="contact.html" class="hover:text-brandGreen transition-colors">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Contact Us -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Contact Us</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-envelope mt-1 text-brandGreen"></i> <span>info@stackly.com</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-phone mt-1 text-brandGreen"></i> <span>9090909090</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-location-dot mt-1 text-brandGreen"></i> <span>MMR Complex, Chinna Tirupati, Near Chinnamuniyappan Kovil, Salem, Pincode 636008</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div class="text-center pt-8 text-gray-500 text-sm">
+                    Copyright © stackly | Designed by Brandbes
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+

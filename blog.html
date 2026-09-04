@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - stackly</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        lightYellow: '#FFF9DA',
+                        lightGreen: '#D1FBE1',
+                        lightPeach: '#FFE6D6',
+                        darkSection: '#0F172A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-white text-gray-900 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 z-[60] w-full bg-white/95 backdrop-blur-md shadow-sm transition-all">
+    <nav class="flex justify-between items-center py-4 px-6 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer">
+            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                <span class="font-bold">S</span>
+            </div>
+            stackly
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <a href="index.html" class="hover:text-black transition-colors">Home</a>
+            <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+            <a href="blog.html" class="text-brandGreen font-semibold">Blog</a>
+            <a href="services.html" class="hover:text-black transition-colors">Services</a>
+            <a href="contact.html" class="hover:text-black transition-colors">Contact Us</a>
+        </div>
+        <div class="hidden md:block">
+            <button class="bg-brandGreen text-white px-8 py-2.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30 tracking-wide" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    
+        <!-- Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-900 focus:outline-none z-[60] relative transition-transform duration-300 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+    <div class="h-[76px] w-full"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex-col items-center pt-28 pb-10 gap-6 justify-start text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
+        <a href="index.html" class="hover:text-brandGreen mobile-link">Home</a>
+        <a href="about.html" class="hover:text-brandGreen mobile-link">About Us</a>
+        <a href="blog.html" class="hover:text-brandGreen mobile-link">Blog</a>
+        <a href="services.html" class="hover:text-brandGreen mobile-link">Services</a>
+        <a href="contact.html" class="hover:text-brandGreen mobile-link">Contact Us</a>
+        <button class="bg-brandGreen text-white px-10 py-3.5 rounded-full font-bold shadow-lg shadow-brandGreen/30 mt-4 text-lg w-3/4 max-w-xs" onclick="window.location.href='login.html'">Login</button>
+    </div>
+
+
+    <!-- Blog Hero -->
+    <section class="py-24 px-6 max-w-4xl mx-auto text-center border-b border-gray-100">
+        <p class="text-gray-500 text-sm mb-4 font-semibold" data-aos="fade-up">Blog</p>
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
+            The power of <span class="underline decoration-brandOrange decoration-4 underline-offset-4">financial</span> forecasting for business success
+        </h1>
+        <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+            Bridging the gap between finance and business. Explore the importance of financial forecasting for businesses of all sizes.
+        </p>
+
+        <!-- Inline Subscribe Form -->
+        <form action="404.html" method="GET" class="max-w-md mx-auto relative mb-4" data-aos="fade-up" data-aos-delay="300">
+            <input type="email" placeholder="Enter your email" required class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-full py-4 pl-6 pr-36 outline-none focus:border-brandGreen transition-colors shadow-sm">
+            <button type="submit" class="absolute right-1.5 top-1.5 bottom-1.5 bg-brandGreen text-white rounded-full px-6 font-bold hover:bg-green-500 transition-colors">Subscribe</button>
+        </form>
+        <p class="text-xs text-gray-400 font-medium" data-aos="fade-up" data-aos-delay="400">Get the latest articles into your inbox!</p>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-12 items-center cursor-pointer group">
+            <div class="lg:w-1/2 w-full" data-aos="fade-right">
+                <div class="rounded-3xl overflow-hidden h-[400px] shadow-lg">
+                    <img src="assets/images/photo-1499951360447-b19be8fe80f5.webp" alt="Featured Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 w-full lg:pl-8" data-aos="fade-left">
+                <!-- Author Info -->
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="assets/images/photo-1438761681033-6461ffad8d80.webp" alt="Author" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-sm">Cameron Williamson</h4>
+                        <p class="text-gray-500 text-xs">June 12, 2024</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 leading-tight group-hover:text-brandGreen transition-colors">Success stories, challenges and advice from entrepreneurs</h2>
+                <p class="text-gray-500 mb-8 leading-relaxed">
+                    Accurate record-keeping is vital. Use accounting software like stackly to track income and expenses throughout the year. Detailed records make it easier to complete tax forms.
+                </p>
+                <a href="blog-details.html" class="font-semibold text-gray-900 hover:text-brandGreen transition-colors flex items-center gap-2">Read More <i class="fa-solid fa-arrow-right text-sm"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles Grid -->
+    <section class="pt-12 pb-48 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-gray-900" data-aos="fade-up">Latest articles</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+            
+            <!-- Article 1 -->
+            <a href="blog-details.html" class="group cursor-pointer block" data-aos="fade-up" data-aos-delay="100">
+                <div class="rounded-3xl overflow-hidden h-[240px] mb-6 shadow-md">
+                    <img src="assets/images/photo-1554224155-6726b3ff858f.webp" alt="Article 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <p class="text-brandOrange text-xs font-bold uppercase tracking-wide mb-3">Marketing</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-brandGreen transition-colors">Tax law, regulations and update relevant to business</h3>
+                <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+                    <span>June 12, 2024</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                    <span>9 Min Read</span>
+                </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="blog-details.html" class="group cursor-pointer block" data-aos="fade-up" data-aos-delay="200">
+                <div class="rounded-3xl overflow-hidden h-[240px] mb-6 shadow-md">
+                    <img src="assets/images/photo-1556740738-b6a63e27c4df.webp" alt="Article 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <p class="text-brandGreen text-xs font-bold uppercase tracking-wide mb-3">Business</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-brandGreen transition-colors">Success stories, challenges and advice from entrepreneurs</h3>
+                <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+                    <span>June 12, 2024</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                    <span>9 Min Read</span>
+                </div>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="blog-details.html" class="group cursor-pointer block" data-aos="fade-up" data-aos-delay="300">
+                <div class="rounded-3xl overflow-hidden h-[240px] mb-6 shadow-md">
+                    <img src="assets/images/photo-1551288049-bebda4e38f71.webp" alt="Article 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <p class="text-yellow-500 text-xs font-bold uppercase tracking-wide mb-3">Management</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-brandGreen transition-colors">Tips on accounting best precise on business</h3>
+                <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+                    <span>June 12, 2024</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                    <span>9 Min Read</span>
+                </div>
+            </a>
+            
+            <!-- Article 4 -->
+            <a href="blog-details.html" class="group cursor-pointer block" data-aos="fade-up" data-aos-delay="100">
+                <div class="rounded-3xl overflow-hidden h-[240px] mb-6 shadow-md">
+                    <img src="assets/images/photo-1460925895917-afdab827c52f.webp" alt="Article 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <p class="text-brandGreen text-xs font-bold uppercase tracking-wide mb-3">Finance</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-brandGreen transition-colors">How to maximize your ROI with automated tools</h3>
+                <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+                    <span>May 28, 2024</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                    <span>6 Min Read</span>
+                </div>
+            </a>
+
+            <!-- Article 5 -->
+            <a href="blog-details.html" class="group cursor-pointer block" data-aos="fade-up" data-aos-delay="200">
+                <div class="rounded-3xl overflow-hidden h-[240px] mb-6 shadow-md">
+                    <img src="assets/images/photo-1593642532744-d377ab507dc8.webp" alt="Article 5" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <p class="text-brandOrange text-xs font-bold uppercase tracking-wide mb-3">Marketing</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-brandGreen transition-colors">The future of remote team collaborations</h3>
+                <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+                    <span>May 20, 2024</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                    <span>12 Min Read</span>
+                </div>
+            </a>
+
+            <!-- Article 6 -->
+            <a href="blog-details.html" class="group cursor-pointer block" data-aos="fade-up" data-aos-delay="300">
+                <div class="rounded-3xl overflow-hidden h-[240px] mb-6 shadow-md">
+                    <img src="assets/images/photo-1522071820081-009f0129c71c.webp" alt="Article 6" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                <p class="text-yellow-500 text-xs font-bold uppercase tracking-wide mb-3">Management</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-brandGreen transition-colors">Scaling your startup: key strategies for 2024</h3>
+                <div class="flex items-center gap-2 text-xs text-gray-500 font-medium">
+                    <span>May 15, 2024</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                    <span>8 Min Read</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer + CTA overlapping (Copied exactly from index.html) -->
+    <div class="relative mt-24">
+        <!-- CTA Banner -->
+        <div class="absolute left-6 right-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 top-0 -translate-y-1/2 z-20 max-w-5xl lg:w-full">
+            <div class="bg-brandGreen rounded-[2rem] p-6 md:p-12 text-center text-white shadow-2xl relative overflow-hidden" data-aos="zoom-in">
+                <!-- Background decorative elements -->
+                <i class="fa-solid fa-money-bill-wave absolute -right-10 -bottom-10 text-9xl opacity-10 rotate-12"></i>
+                <i class="fa-solid fa-chart-line absolute -left-10 -top-10 text-9xl opacity-10 -rotate-12"></i>
+                
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Manage your <span class="underline decoration-brandOrange decoration-4 underline-offset-4">finances</span> <br/> & save time
+                </h2>
+                <p class="text-gray-800 mb-8 max-w-lg mx-auto font-medium">
+                    SaaS providers often offer customer support to assist with any technical issues or questions you may have.
+                </p>
+                
+                <form action="404.html" method="GET" class="flex max-w-md mx-auto relative">
+                    <input type="email" placeholder="Enter your email" class="w-full bg-white/20 border border-white/30 text-gray-900 placeholder-gray-700 rounded-full py-4 pl-6 pr-32 outline-none focus:bg-white/40 transition-colors" required>
+                    <button type="submit" class="absolute right-1.5 top-1.5 bottom-1.5 bg-gray-900 text-white rounded-full px-6 font-semibold hover:bg-gray-800 transition-colors">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dark Footer -->
+        <footer class="bg-darkSection text-white pt-56 pb-12 px-6 lg:px-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-16 text-center md:text-left">
+                    
+                    <!-- Col 1: Brand -->
+                    <div class="lg:col-span-6 bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col items-center md:items-start">
+                        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter mb-6 justify-center md:justify-start">
+                            <div class="w-8 h-8 bg-brandOrange text-white flex items-center justify-center rounded-lg">
+                                <span class="font-bold">S</span>
+                            </div>
+                            stackly
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 pr-0 md:pr-4">We're just announced new feature that would help you increase your experience of using metadata.</p>
+                        <div class="flex gap-3 justify-center md:justify-start">
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Quick links</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li><a href="index.html" class="hover:text-brandGreen transition-colors">Home</a></li>
+                            <li><a href="about.html" class="hover:text-brandGreen transition-colors">About us</a></li>
+                            <li><a href="services.html" class="hover:text-brandGreen transition-colors">Services</a></li>
+                            <li><a href="blog.html" class="hover:text-brandGreen transition-colors">Blog</a></li>
+                            <li><a href="contact.html" class="hover:text-brandGreen transition-colors">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Contact Us -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Contact Us</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-envelope mt-1 text-brandGreen"></i> <span>info@stackly.com</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-phone mt-1 text-brandGreen"></i> <span>9090909090</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-location-dot mt-1 text-brandGreen"></i> <span>MMR Complex, Chinna Tirupati, Near Chinnamuniyappan Kovil, Salem, Pincode 636008</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div class="text-center pt-8 text-gray-500 text-sm">
+                    Copyright © stackly | Designed by Brandbes
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+

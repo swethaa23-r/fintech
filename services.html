@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - stackly</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#00E58F',
+                        brandOrange: '#FF5B37',
+                        lightYellow: '#FFF9DA',
+                        lightGreen: '#D1FBE1',
+                        lightPeach: '#FFE6D6',
+                        darkSection: '#0F172A',
+                        cardBg: '#FAFAFA'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-white text-gray-900 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 z-[60] w-full bg-white/95 backdrop-blur-md shadow-sm transition-all">
+    <nav class="flex justify-between items-center py-4 px-6 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer">
+            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
+                <span class="font-bold">S</span>
+            </div>
+            stackly
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <a href="index.html" class="hover:text-black transition-colors">Home</a>
+            <a href="about.html" class="hover:text-black transition-colors">About Us</a>
+            <a href="blog.html" class="hover:text-black transition-colors">Blog</a>
+            <a href="services.html" class="text-brandGreen font-semibold">Services</a>
+            <a href="contact.html" class="hover:text-black transition-colors">Contact Us</a>
+        </div>
+        <div class="hidden md:block">
+            <button class="bg-brandGreen text-white px-8 py-2.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30 tracking-wide" onclick="window.location.href='login.html'">Login</button>
+        </div>
+    
+        <!-- Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-900 focus:outline-none z-[60] relative transition-transform duration-300 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+    <div class="h-[76px] w-full"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex-col items-center pt-28 pb-10 gap-6 justify-start text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
+        <a href="index.html" class="hover:text-brandGreen mobile-link">Home</a>
+        <a href="about.html" class="hover:text-brandGreen mobile-link">About Us</a>
+        <a href="blog.html" class="hover:text-brandGreen mobile-link">Blog</a>
+        <a href="services.html" class="hover:text-brandGreen mobile-link">Services</a>
+        <a href="contact.html" class="hover:text-brandGreen mobile-link">Contact Us</a>
+        <button class="bg-brandGreen text-white px-10 py-3.5 rounded-full font-bold shadow-lg shadow-brandGreen/30 mt-4 text-lg w-3/4 max-w-xs" onclick="window.location.href='login.html'">Login</button>
+    </div>
+
+
+    <!-- Services Hero (Like About/Blog) -->
+    <section class="py-24 px-6 max-w-4xl mx-auto text-center">
+        <p class="text-brandGreen text-sm mb-4 font-bold uppercase tracking-wider" data-aos="fade-up">Our Services</p>
+        <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900" data-aos="fade-up" data-aos-delay="100">
+            Empowering your <span class="underline decoration-brandOrange decoration-4 underline-offset-4">financial</span> journey
+        </h1>
+        <p class="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+            stackly revolutionizes banking, offering a user-centric digital experience. Explore our comprehensive services designed to help you manage, grow, and secure your wealth.
+        </p>
+    </section>
+
+    <!-- How It Works Section (Previously the Hero) -->
+    <section class="bg-darkSection text-white py-24 px-6 mx-4 lg:mx-10 rounded-[3rem] mb-24">
+        <div class="max-w-5xl mx-auto text-center mb-20" data-aos="fade-up">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">Opening Bank Account Easier</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                We've simplified the onboarding process so you can get up and running in minutes, not days. Follow these simple steps.
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <!-- Left: Image -->
+            <div class="w-full md:w-1/2 relative flex justify-center" data-aos="fade-right">
+                <div class="bg-brandGreen w-72 h-80 lg:w-96 lg:h-[400px] rounded-3xl relative overflow-visible">
+                    <img src="assets/images/photo-1573497019940-1c28c88b4f3e.webp" alt="Girl pointing" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-11/12 h-[115%] object-cover object-top rounded-b-3xl [clip-path:inset(0_0_0_0_round_0_0_1.5rem_1.5rem)]">
+                </div>
+            </div>
+
+            <!-- Right: Steps -->
+            <div class="w-full md:w-1/2 relative" data-aos="fade-left">
+                <!-- Vertical Line -->
+                <div class="absolute left-6 top-10 bottom-10 w-0.5 bg-gray-700/50"></div>
+
+                <div class="space-y-12 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="flex gap-6 group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-brandGreen flex items-center justify-center flex-shrink-0 shadow-lg shadow-white/10 group-hover:bg-brandGreen group-hover:text-white transition-colors duration-300 relative z-10">
+                            <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Download App</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed max-w-xs">Download app. It will work for windows, Mac and androids.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex gap-6 group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-brandGreen flex items-center justify-center flex-shrink-0 shadow-lg shadow-white/10 group-hover:bg-brandGreen group-hover:text-white transition-colors duration-300 relative z-10">
+                            <i class="fa-solid fa-user-plus text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Create Your Account</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed max-w-xs">Open your own account online with ease.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex gap-6 group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-brandGreen flex items-center justify-center flex-shrink-0 shadow-lg shadow-white/10 group-hover:bg-brandGreen group-hover:text-white transition-colors duration-300 relative z-10">
+                            <i class="fa-solid fa-wallet text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Start Banking</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed max-w-xs">Set up online banking and watch your money grow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="py-12 px-6 max-w-7xl mx-auto mb-24">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-gray-900 max-w-sm leading-tight">
+                Our Banking Services & Benefits
+            </h2>
+            <a href="services.html" class="flex items-center gap-3 font-semibold text-gray-900 hover:text-brandGreen transition-colors group">
+                <span class="w-10 h-10 rounded-full bg-darkSection text-white flex items-center justify-center group-hover:bg-brandGreen transition-colors">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+                Learn More
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="bg-cardBg rounded-3xl p-10 border border-gray-100 group hover:bg-brandGreen transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-full bg-darkSection text-brandGreen flex items-center justify-center text-2xl mb-8 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">Mobile Banking</h3>
+                <p class="text-gray-500 text-sm leading-relaxed group-hover:text-white/90 transition-colors">Take control anytime with our secure and user-friendly app. Manage accounts, transfer funds, and pay bills with 24/7 access.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-cardBg rounded-3xl p-10 border border-gray-100 group hover:bg-brandGreen transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-full bg-darkSection text-brandGreen flex items-center justify-center text-2xl mb-8 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-piggy-bank"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">Savings Account</h3>
+                <p class="text-gray-500 text-sm leading-relaxed group-hover:text-white/90 transition-colors">Watch your money flourish with flexible options and competitive rates. Earn interest while enjoying the easy access to your funds.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-cardBg rounded-3xl p-10 border border-gray-100 group hover:bg-brandGreen transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-full bg-darkSection text-brandGreen flex items-center justify-center text-2xl mb-8 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">Deposits</h3>
+                <p class="text-gray-500 text-sm leading-relaxed group-hover:text-white/90 transition-colors">Make quick and easy deposits to any accounts with our diverse options. Choose from cash, check, mobile transfers, or direct deposits.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-cardBg rounded-3xl p-10 border border-gray-100 group hover:bg-brandGreen transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-full bg-darkSection text-brandGreen flex items-center justify-center text-2xl mb-8 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">Business Loans</h3>
+                <p class="text-gray-500 text-sm leading-relaxed group-hover:text-white/90 transition-colors">Power your entrepreneurial spirit with tailored loans built for your specific needs. Get the financial boost to reach your business goal.</p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-cardBg rounded-3xl p-10 border border-gray-100 group hover:bg-brandGreen transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-full bg-darkSection text-brandGreen flex items-center justify-center text-2xl mb-8 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors">Credit Cards</h3>
+                <p class="text-gray-500 text-sm leading-relaxed group-hover:text-white/90 transition-colors">Find the perfect card for your lifestyle, earn rewards on purchases, and unlock exclusive benefits that elevate your spending experience.</p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bg-brandGreen rounded-3xl p-10 border border-brandGreen shadow-xl group hover:-translate-y-2 cursor-pointer relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-full bg-darkSection text-brandGreen flex items-center justify-center text-2xl mb-8 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <!-- Link Arrow Top Right -->
+                <div class="absolute top-8 right-8 w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 group-hover:translate-x-0">
+                    <i class="fa-solid fa-arrow-up-right"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Funds Remittance</h3>
+                <p class="text-white/90 text-sm leading-relaxed">Send money globally, quickly, securely, and affordably. Stay connected with your beloved ones near and far with our reliable service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 1: Pricing Plans -->
+    <section class="pt-16 pb-48 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Simple, transparent pricing</h2>
+            <p class="text-gray-500 max-w-xl mx-auto">No hidden fees, no surprise charges. Choose the plan that works best for your financial needs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            
+            <!-- Basic Plan -->
+            <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Starter</h3>
+                <p class="text-gray-500 text-sm mb-6">Perfect for individuals just getting started.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gray-900">$0</span><span class="text-gray-500">/month</span>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-600 font-medium">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Basic checking account</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Digital debit card</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Standard support</li>
+                    <li class="flex items-center gap-3 opacity-40"><i class="fa-solid fa-xmark text-gray-400"></i> Free ATM withdrawals</li>
+                </ul>
+                <button class="w-full py-3 rounded-full border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-colors" onclick="window.location.href='404.html'">Choose Starter</button>
+            </div>
+
+            <!-- Pro Plan (Highlighted) -->
+            <div class="bg-darkSection text-white rounded-3xl p-10 border border-gray-800 shadow-xl transform scale-105 relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brandGreen text-gray-900 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
+                <h3 class="text-xl font-bold mb-2">Professional</h3>
+                <p class="text-gray-400 text-sm mb-6">For serious professionals managing wealth.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold">$12</span><span class="text-gray-400">/month</span>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-300 font-medium">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Everything in Starter</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Premium metal card</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> 24/7 Priority support</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Free global ATM withdrawals</li>
+                </ul>
+                <button class="w-full py-3 rounded-full bg-brandGreen text-gray-900 font-bold hover:bg-green-500 transition-colors" onclick="window.location.href='404.html'">Choose Professional</button>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Business</h3>
+                <p class="text-gray-500 text-sm mb-6">Built for teams and growing businesses.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gray-900">$49</span><span class="text-gray-500">/month</span>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-600 font-medium">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Multiple team members</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> API access</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Dedicated account manager</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brandGreen"></i> Payroll integrations</li>
+                </ul>
+                <button class="w-full py-3 rounded-full border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-colors" onclick="window.location.href='404.html'">Choose Business</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: FAQ -->
+    <section class="py-24 px-6 bg-cardBg rounded-[3rem] mx-4 lg:mx-10 mb-24">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+            <div class="lg:w-1/3" data-aos="fade-right">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                    Frequently <span class="underline decoration-brandOrange decoration-4 underline-offset-4">asked</span> questions
+                </h2>
+                <p class="text-gray-500 mb-8 leading-relaxed">Everything you need to know about our services and billing.</p>
+                <a href="404.html" class="font-bold text-gray-900 hover:text-brandGreen transition-colors flex items-center gap-2">Contact support <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="lg:w-2/3 space-y-4" data-aos="fade-left">
+                <!-- FAQ 1 -->
+                <details class="group bg-white rounded-2xl border border-gray-200 p-6 cursor-pointer hover:border-brandGreen transition-colors" open>
+                    <summary class="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
+                        How do I switch to a different service plan?
+                        <span class="transition-transform group-open:rotate-180 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm text-gray-500">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed pr-8">
+                        You can upgrade or downgrade your plan at any time through your account dashboard. Changes will be prorated and reflected in your next billing cycle.
+                    </p>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="group bg-white rounded-2xl border border-gray-200 p-6 cursor-pointer hover:border-brandGreen transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
+                        Are there any hidden transaction fees?
+                        <span class="transition-transform group-open:rotate-180 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm text-gray-500">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed pr-8">
+                        No, we believe in complete transparency. All fees are clearly outlined in our pricing plans, and you'll always be notified before any charge is applied to your account.
+                    </p>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="group bg-white rounded-2xl border border-gray-200 p-6 cursor-pointer hover:border-brandGreen transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-lg text-gray-900 list-none">
+                        Can I cancel my subscription anytime?
+                        <span class="transition-transform group-open:rotate-180 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm text-gray-500">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed pr-8">
+                        Yes, you can cancel your subscription at any time without any cancellation fees. Your account will remain active until the end of your current billing cycle.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Testimonials Section -->
+    <section class="pt-16 pb-48 px-6 max-w-7xl mx-auto">
+        <!-- Top About -->
+        <div class="max-w-3xl mx-auto text-center mb-24" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">About stackly</h2>
+            <p class="text-gray-500 leading-relaxed mb-8">
+                Welcome to stackly bank, your gateway to hassle-free banking. Our advanced banking technology and tailored services will help you manage your finances with ease.
+            </p>
+            <a href="404.html" class="inline-block bg-brandGreen text-white px-8 py-3 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-brandGreen/30">
+                Join Our Team
+            </a>
+        </div>
+
+        <!-- Bottom Testimonials -->
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16">
+            <div class="lg:w-1/3" data-aos="fade-right">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
+                    Loved by Thousand of Entrepreneurs
+                </h2>
+                <a href="services.html" class="flex items-center gap-3 font-semibold text-gray-900 hover:text-brandGreen transition-colors group">
+                    <span class="w-10 h-10 rounded-full bg-darkSection text-white flex items-center justify-center group-hover:bg-brandGreen transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                    Learn More
+                </a>
+            </div>
+
+            <div class="lg:w-2/3 space-y-6" data-aos="fade-left">
+                <!-- Review 1 -->
+                <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fa-brands fa-aws text-brandOrange text-2xl"></i>
+                        <h4 class="font-bold text-lg">Branding</h4>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed mb-8 text-sm lg:text-base">
+                        "stackly commitment to security is impressive. The 24/7 monitoring and encryption ensure my financial data is safe. The convenience of quick actions and responsive design makes banking on-the-go a breeze. Trustworthy and efficient!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="assets/images/photo-1580489944761-15a19d654956.webp" alt="Eleanor Pena" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-gray-900 text-sm">Eleanor Pena</h5>
+                            <p class="text-gray-400 text-xs">Young Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fa-solid fa-circle-notch text-brandOrange text-2xl"></i>
+                        <h4 class="font-bold text-lg">Company X</h4>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed mb-8 text-sm lg:text-base">
+                        "stackly commitment to security is impressive. The 24/7 monitoring and encryption ensure my financial data is safe. The convenience of quick actions and responsive design makes banking on-the-go a breeze. Trustworthy and efficient!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="assets/images/photo-1438761681033-6461ffad8d80.webp" alt="Darlene Robertson" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h5 class="font-bold text-gray-900 text-sm">Darlene Robertson</h5>
+                            <p class="text-gray-400 text-xs">Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer + CTA overlapping (Copied exactly from index.html) -->
+    <div class="relative mt-24">
+        <!-- CTA Banner -->
+        <div class="absolute left-6 right-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 top-0 -translate-y-1/2 z-20 max-w-5xl lg:w-full">
+            <div class="bg-brandGreen rounded-[2rem] p-6 md:p-12 text-center text-white shadow-2xl relative overflow-hidden" data-aos="zoom-in">
+                <!-- Background decorative elements -->
+                <i class="fa-solid fa-money-bill-wave absolute -right-10 -bottom-10 text-9xl opacity-10 rotate-12"></i>
+                <i class="fa-solid fa-chart-line absolute -left-10 -top-10 text-9xl opacity-10 -rotate-12"></i>
+                
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+                    Manage your <span class="underline decoration-brandOrange decoration-4 underline-offset-4">finances</span> <br/> & save time
+                </h2>
+                <p class="text-gray-800 mb-8 max-w-lg mx-auto font-medium">
+                    SaaS providers often offer customer support to assist with any technical issues or questions you may have.
+                </p>
+                
+                <form action="404.html" method="GET" class="flex max-w-md mx-auto relative">
+                    <input type="email" placeholder="Enter your email" class="w-full bg-white/20 border border-white/30 text-gray-900 placeholder-gray-700 rounded-full py-4 pl-6 pr-32 outline-none focus:bg-white/40 transition-colors" required>
+                    <button type="submit" class="absolute right-1.5 top-1.5 bottom-1.5 bg-gray-900 text-white rounded-full px-6 font-semibold hover:bg-gray-800 transition-colors">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dark Footer -->
+        <footer class="bg-darkSection text-white pt-56 pb-12 px-6 lg:px-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-16 text-center md:text-left">
+                    
+                    <!-- Col 1: Brand -->
+                    <div class="lg:col-span-6 bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col items-center md:items-start">
+                        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter mb-6 justify-center md:justify-start">
+                            <div class="w-8 h-8 bg-brandOrange text-white flex items-center justify-center rounded-lg">
+                                <span class="font-bold">S</span>
+                            </div>
+                            stackly
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8 pr-0 md:pr-4">We're just announced new feature that would help you increase your experience of using metadata.</p>
+                        <div class="flex gap-3 justify-center md:justify-start">
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter text-sm"></i></a>
+                            <a href="404.html" class="w-8 h-8 rounded-full bg-brandGreen text-white flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Quick links</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li><a href="index.html" class="hover:text-brandGreen transition-colors">Home</a></li>
+                            <li><a href="about.html" class="hover:text-brandGreen transition-colors">About us</a></li>
+                            <li><a href="services.html" class="hover:text-brandGreen transition-colors">Services</a></li>
+                            <li><a href="blog.html" class="hover:text-brandGreen transition-colors">Blog</a></li>
+                            <li><a href="contact.html" class="hover:text-brandGreen transition-colors">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Contact Us -->
+                    <div class="lg:col-span-3">
+                        <h4 class="font-bold mb-6 text-lg">Contact Us</h4>
+                        <ul class="space-y-4 text-sm text-gray-400">
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-envelope mt-1 text-brandGreen"></i> <span>info@stackly.com</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-phone mt-1 text-brandGreen"></i> <span>9090909090</span></li>
+                            <li class="flex gap-2 items-start justify-center md:justify-start"><i class="fa-solid fa-location-dot mt-1 text-brandGreen"></i> <span>MMR Complex, Chinna Tirupati, Near Chinnamuniyappan Kovil, Salem, Pincode 636008</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div class="text-center pt-8 text-gray-500 text-sm">
+                    Copyright © stackly | Designed by Brandbes
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
