@@ -35,12 +35,9 @@
 
     <!-- Navbar -->
     <header class="fixed top-0 left-0 z-[60] w-full bg-white/95 backdrop-blur-md shadow-sm transition-all">
-    <nav class="flex justify-between items-center py-4 px-6 lg:px-10 max-w-7xl mx-auto">
-        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer">
-            <div class="w-8 h-8 bg-brandGreen text-white flex items-center justify-center rounded-lg">
-                <span class="font-bold">S</span>
-            </div>
-            stackly
+    <nav class="flex justify-between items-center py-2 px-6 lg:px-10 max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter cursor-pointer" onclick="window.location.href='index.html'">
+            <img src="logo.webp" alt="Logo" class="w-24 h-24 object-contain mix-blend-multiply -my-6">
         </div>
         <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
             <a href="index.html" class="hover:text-black transition-colors">Home</a>
@@ -54,7 +51,7 @@
         </div>
     
         <!-- Hamburger Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-900 focus:outline-none z-[60] relative transition-transform duration-300 w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100">
+        <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-900 focus:outline-none z-[60] relative transition-transform duration-300 w-20 h-20 flex items-center justify-center rounded-full hover:bg-gray-100">
             <i class="fa-solid fa-bars"></i>
         </button>
 
@@ -354,7 +351,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8">
             <div data-aos="fade-up" data-aos-delay="100" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
-                <div class="w-16 h-16 bg-lightYellow rounded-full flex items-center justify-center mb-6 text-yellow-600 shadow-sm text-xl">
+                <div class="w-24 h-24 bg-lightYellow rounded-full flex items-center justify-center mb-6 text-yellow-600 shadow-sm text-xl">
                     <i class="fa-solid fa-chart-line"></i>
                 </div>
                 <h3 class="font-bold text-xl mb-3 text-gray-900">Financial data analysis</h3>
@@ -363,7 +360,7 @@
             </div>
             
             <div data-aos="fade-up" data-aos-delay="200" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
-                <div class="w-16 h-16 bg-lightGreen rounded-full flex items-center justify-center mb-6 text-brandGreen shadow-sm text-xl">
+                <div class="w-24 h-24 bg-lightGreen rounded-full flex items-center justify-center mb-6 text-brandGreen shadow-sm text-xl">
                     <i class="fa-solid fa-clock"></i>
                 </div>
                 <h3 class="font-bold text-xl mb-3 text-gray-900">Real time report</h3>
@@ -372,7 +369,7 @@
             </div>
 
             <div data-aos="fade-up" data-aos-delay="300" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
-                <div class="w-16 h-16 bg-lightPeach rounded-full flex items-center justify-center mb-6 text-brandOrange shadow-sm text-xl">
+                <div class="w-24 h-24 bg-lightPeach rounded-full flex items-center justify-center mb-6 text-brandOrange shadow-sm text-xl">
                     <i class="fa-solid fa-box-open"></i>
                 </div>
                 <h3 class="font-bold text-xl mb-3 text-gray-900">Business kits</h3>
@@ -381,7 +378,7 @@
             </div>
 
             <div data-aos="fade-up" data-aos-delay="100" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
-                <div class="w-16 h-16 bg-lightPeach rounded-full flex items-center justify-center mb-6 text-brandOrange shadow-sm text-xl">
+                <div class="w-24 h-24 bg-lightPeach rounded-full flex items-center justify-center mb-6 text-brandOrange shadow-sm text-xl">
                     <i class="fa-solid fa-wallet"></i>
                 </div>
                 <h3 class="font-bold text-xl mb-3 text-gray-900">Digital wallet</h3>
@@ -390,7 +387,7 @@
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
-                <div class="w-16 h-16 bg-lightYellow rounded-full flex items-center justify-center mb-6 text-yellow-600 shadow-sm text-xl">
+                <div class="w-24 h-24 bg-lightYellow rounded-full flex items-center justify-center mb-6 text-yellow-600 shadow-sm text-xl">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
                 <h3 class="font-bold text-xl mb-3 text-gray-900">Secure transactions</h3>
@@ -399,7 +396,7 @@
             </div>
 
             <div data-aos="fade-up" data-aos-delay="300" class="feature-card flex flex-col items-center text-center p-6 bg-transparent">
-                <div class="w-16 h-16 bg-lightGreen rounded-full flex items-center justify-center mb-6 text-brandGreen shadow-sm text-xl">
+                <div class="w-24 h-24 bg-lightGreen rounded-full flex items-center justify-center mb-6 text-brandGreen shadow-sm text-xl">
                     <i class="fa-solid fa-headset"></i>
                 </div>
                 <h3 class="font-bold text-xl mb-3 text-gray-900">24/7 support</h3>
@@ -422,8 +419,8 @@
                     <!-- Social Overlay -->
                     <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
                         <div class="flex gap-4">
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -439,8 +436,8 @@
                     <!-- Social Overlay -->
                     <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
                         <div class="flex gap-4">
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -456,8 +453,8 @@
                     <!-- Social Overlay -->
                     <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
                         <div class="flex gap-4">
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -473,8 +470,8 @@
                     <!-- Social Overlay -->
                     <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
                         <div class="flex gap-4">
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -490,8 +487,8 @@
                     <!-- Social Overlay -->
                     <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
                         <div class="flex gap-4">
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -507,8 +504,8 @@
                     <!-- Social Overlay -->
                     <div class="social-overlay absolute inset-0 bg-brandGreen/90 flex flex-col items-center justify-center gap-4 opacity-0 transition-opacity duration-300">
                         <div class="flex gap-4">
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="404.html" class="w-10 h-10 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" class="w-20 h-20 rounded-full bg-white text-brandGreen flex items-center justify-center hover:-translate-y-1 transition-transform"><i class="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
@@ -548,11 +545,8 @@
                     
                     <!-- Col 1: Brand -->
                     <div class="lg:col-span-6 bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col items-center md:items-start">
-                        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter mb-6 justify-center md:justify-start">
-                            <div class="w-8 h-8 bg-brandOrange text-white flex items-center justify-center rounded-lg">
-                                <span class="font-bold">S</span>
-                            </div>
-                            stackly
+                        <div class="flex items-center gap-2 font-bold text-2xl tracking-tighter mb-6 justify-center md:justify-start cursor-pointer" onclick="window.location.href='index.html'">
+                            <img src="logo.webp" alt="Logo" class="w-24 h-24 object-contain brightness-0 invert">
                         </div>
                         <p class="text-gray-400 text-sm leading-relaxed mb-8 pr-0 md:pr-4">We're just announced new feature that would help you increase your experience of using metadata.</p>
                         <div class="flex gap-3 justify-center md:justify-start">
