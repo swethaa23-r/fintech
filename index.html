@@ -65,18 +65,18 @@
     <div class="h-[76px] w-full"></div>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex-col items-center pt-28 pb-10 gap-6 text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
-        <a href="index.html" class="hover:text-brandGreen mobile-link">Home</a>
-        <a href="about.html" class="hover:text-brandGreen mobile-link">About Us</a>
-        <a href="blog.html" class="hover:text-brandGreen mobile-link">Blog</a>
-        <a href="services.html" class="hover:text-brandGreen mobile-link">Services</a>
-        <a href="contact.html" class="hover:text-brandGreen mobile-link">Contact Us</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex flex-col items-center pt-28 pb-10 gap-6 text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
+        <a href="index.html" class="text-red-500 hover:text-brandGreen mobile-link">Home</a>
+        <a href="about.html" class="text-red-500 hover:text-brandGreen mobile-link">About Us</a>
+        <a href="blog.html" class="text-red-500 hover:text-brandGreen mobile-link">Blog</a>
+        <a href="services.html" class="text-red-500 hover:text-brandGreen mobile-link">Services</a>
+        <a href="contact.html" class="text-red-500 hover:text-brandGreen mobile-link">Contact Us</a>
         <button class="bg-brandGreen text-white px-10 py-3.5 rounded-full font-bold shadow-lg shadow-brandGreen/30 mt-4 text-lg w-3/4 max-w-xs" onclick="window.location.href='login.html'">Login</button>
     </div>
 
 
     <!-- Hero Section -->
-    <section class="relative px-6 lg:px-10 pt-10 pb-24 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12" id="hero-section">
+    <section class="relative px-6 lg:px-10 pt-10 pb-8 lg:pb-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12" id="hero-section">
         <!-- Background Elements -->
         <div class="absolute inset-0 -z-20 overflow-hidden rounded-3xl pointer-events-none">
             <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brandGreen/10 blur-[100px] rounded-full gsap-bg-blob"></div>
@@ -126,7 +126,7 @@
             </div>
         </div>
 
-        <div class="lg:w-1/2 relative mt-16 lg:mt-0 w-full perspective-[1000px] hero-right-card opacity-0 translate-x-12">
+        <div class="lg:w-1/2 relative w-full perspective-[1000px] hero-right-card opacity-0 translate-x-12">
             <div id="gsap-3d-card" class="bg-white rounded-3xl p-6 lg:p-8 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-gray-100 relative w-full overflow-hidden transition-shadow duration-300 hover:shadow-[0_30px_60px_-15px_rgba(0,229,143,0.15)] will-change-transform">
                 <div class="bg-lightGreen absolute top-0 left-0 w-full h-24 rounded-3xl -z-10"></div>
                 <h3 class="font-semibold mb-6 pt-2">Overview</h3>
@@ -182,7 +182,7 @@
     </section>
 
     <!-- NEW REFINED FEATURES SECTION -->
-    <section class="py-24 px-6 max-w-7xl mx-auto">
+    <section class="py-8 lg:py-12 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16" data-aos="fade-up">
             <p class="text-gray-500 text-sm mb-2 font-semibold tracking-wide uppercase">Features</p>
             <h2 class="text-4xl lg:text-5xl font-bold max-w-2xl mx-auto leading-tight">
@@ -191,7 +191,7 @@
         </div>
 
         <!-- 1. Income Analytics -->
-        <div class="flex flex-col lg:flex-row gap-6 items-center mb-12 h-auto lg:h-[480px]">
+        <div class="flex flex-col lg:flex-row gap-6 items-center mb-6 h-auto lg:h-[480px]">
             <div class="lg:w-[35%] bg-lightYellow rounded-[2.5rem] p-10 flex flex-col justify-center h-full w-full relative z-20" data-aos="fade-right">
                 <div class="w-20 h-20 bg-gray-900 text-white rounded-full flex items-center justify-center mb-8 shadow-lg text-xl">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
@@ -203,9 +203,9 @@
                 <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-2 text-gray-900">See details <i class="fa-solid fa-arrow-right text-[12px]"></i></a>
             </div>
             
-            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] h-full relative overflow-hidden border border-gray-100 w-full" data-aos="fade-left">
+            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] min-h-[420px] lg:min-h-full h-full relative overflow-hidden border border-gray-100 w-full flex flex-col sm:block justify-center items-center gap-8 py-10 sm:py-0" data-aos="fade-left">
                 <!-- Back Card (Left) -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 absolute left-8 top-1/2 -translate-y-1/2 w-64 animate-float">
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 relative sm:absolute sm:left-8 sm:right-auto mx-auto sm:mx-0 top-0 sm:top-1/2 -translate-y-0 sm:-translate-y-1/2 w-[90%] sm:w-64 animate-float">
                     <div class="flex justify-between items-center mb-8">
                         <h4 class="font-bold text-sm text-gray-800">Income Analysis</h4>
                         <span class="text-[9px] bg-gray-50 border border-gray-200 px-2 py-1 rounded-full text-gray-500 flex items-center gap-1 font-medium">Monthly <i class="fa-solid fa-chevron-down text-[8px]"></i></span>
@@ -229,7 +229,7 @@
                 </div>
 
                 <!-- Front Card (Right, overlapping) -->
-                <div class="bg-white rounded-3xl p-6 mockup-shadow absolute right-8 top-1/2 -translate-y-1/2 w-[340px] z-10 animate-float-delayed">
+                <div class="bg-white rounded-3xl p-6 mockup-shadow relative sm:absolute sm:left-auto sm:right-8 mx-auto sm:mx-0 top-0 sm:top-1/2 bottom-0 sm:bottom-auto -translate-y-0 sm:-translate-y-1/2 w-[90%] sm:w-[340px] z-10 animate-float-delayed">
                     <div class="flex justify-between items-center mb-6">
                         <h4 class="font-bold text-sm text-gray-800">Balance Overview</h4>
                         <span class="text-[9px] border border-gray-200 px-3 py-1 rounded-full text-gray-600 font-medium">More info</span>
@@ -263,10 +263,10 @@
         </div>
 
         <!-- 2. Expense Management -->
-        <div class="flex flex-col-reverse lg:flex-row gap-6 items-center mb-12 h-auto lg:h-[480px]">
-            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] h-full relative overflow-hidden border border-gray-100 w-full" data-aos="fade-right">
+        <div class="flex flex-col-reverse lg:flex-row gap-6 items-center mb-6 h-auto lg:h-[480px]">
+            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] min-h-[420px] lg:min-h-full h-full relative overflow-hidden border border-gray-100 w-full flex flex-col sm:block justify-center items-center gap-8 py-10 sm:py-0" data-aos="fade-right">
                 <!-- Left Card (Analytics) -->
-                <div class="bg-white rounded-3xl p-5 shadow-sm border border-gray-100 absolute left-8 top-10 w-[240px] z-10 animate-float">
+                <div class="bg-white rounded-3xl p-5 shadow-sm border border-gray-100 relative sm:absolute sm:left-8 sm:right-auto mx-auto sm:mx-0 top-0 sm:top-10 w-[90%] sm:w-[240px] z-10 animate-float">
                     <div class="flex items-center gap-2 text-xs font-semibold text-gray-800 mb-4"><i class="fa-regular fa-circle-play text-gray-400"></i> Analytics</div>
                     <div class="bg-gray-900 text-white text-[10px] px-3 py-1.5 rounded-full inline-block mb-3 font-medium">Expense</div>
                     
@@ -297,7 +297,7 @@
                 </div>
 
                 <!-- Right Top Card (Credit Card) -->
-                <div class="bg-white rounded-3xl p-5 mockup-shadow absolute right-8 top-12 w-[320px] z-20 animate-float-delayed">
+                <div class="bg-white rounded-3xl p-5 mockup-shadow relative sm:absolute sm:left-auto sm:right-8 mx-auto sm:mx-0 top-0 sm:top-12 w-[90%] sm:w-[320px] z-20 animate-float-delayed">
                     <h4 class="font-bold text-sm text-gray-800 mb-4 pb-2 border-b border-gray-100">Credit card payments</h4>
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-brandOrange text-xs"><i class="fa-solid fa-check"></i></div>
@@ -319,7 +319,7 @@
                 </div>
 
                 <!-- Right Bottom Card (Shipping) -->
-                <div class="bg-white rounded-2xl p-4 mockup-shadow absolute right-24 bottom-14 w-[240px] z-30 animate-float">
+                <div class="bg-white rounded-2xl p-4 mockup-shadow relative sm:absolute sm:left-auto sm:right-24 mx-auto sm:mx-0 bottom-0 sm:bottom-14 w-[85%] sm:w-[240px] z-30 animate-float">
                     <div class="flex items-center gap-3">
                         <div class="w-20 h-20 rounded-full bg-orange-50 flex items-center justify-center text-brandOrange">
                             <i class="fa-solid fa-arrow-trend-up"></i>
@@ -346,7 +346,7 @@
         </div>
 
         <!-- 3. Payment Analytics -->
-        <div class="flex flex-col lg:flex-row gap-6 items-center mb-12 h-auto lg:h-[480px]">
+        <div class="flex flex-col lg:flex-row gap-6 items-center mb-6 h-auto lg:h-[480px]">
             <div class="lg:w-[35%] bg-lightPeach rounded-[2.5rem] p-10 flex flex-col justify-center h-full w-full relative z-20" data-aos="fade-right">
                 <div class="w-20 h-20 bg-gray-900 text-white rounded-full flex items-center justify-center mb-8 shadow-lg text-xl">
                     <i class="fa-solid fa-coins"></i>
@@ -358,9 +358,9 @@
                 <a href="404.html" class="font-semibold text-sm hover:underline flex items-center gap-2 text-gray-900">See details <i class="fa-solid fa-arrow-right text-[12px]"></i></a>
             </div>
 
-            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] h-full relative overflow-hidden border border-gray-100 w-full" data-aos="fade-left">
+            <div class="lg:w-[65%] bg-[#F8F8F8] rounded-[2.5rem] min-h-[420px] lg:min-h-full h-full relative overflow-hidden border border-gray-100 w-full flex flex-col sm:block justify-center items-center gap-8 py-10 sm:py-0" data-aos="fade-left">
                 <!-- Back Card (Left) -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 absolute left-8 top-1/2 -translate-y-1/2 w-[280px] h-[320px] animate-float">
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 relative sm:absolute sm:left-8 sm:right-auto mx-auto sm:mx-0 top-0 sm:top-1/2 -translate-y-0 sm:-translate-y-1/2 w-[90%] sm:w-[280px] h-[320px] animate-float">
                     <h4 class="font-semibold text-xs text-gray-500 mb-1">Spent This Month</h4>
                     <h2 class="text-3xl font-bold text-gray-900 mb-6">$753.00</h2>
                     
@@ -391,7 +391,7 @@
                 </div>
 
                 <!-- Front Card (Right, overlapping) -->
-                <div class="bg-white rounded-3xl p-6 mockup-shadow absolute right-8 top-1/2 -translate-y-1/2 w-[300px] z-10 animate-float-delayed">
+                <div class="bg-white rounded-3xl p-6 mockup-shadow relative sm:absolute sm:left-auto sm:right-8 mx-auto sm:mx-0 top-0 sm:top-1/2 bottom-0 sm:bottom-auto -translate-y-0 sm:-translate-y-1/2 w-[90%] sm:w-[300px] z-10 animate-float-delayed">
                     <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
                         <h4 class="font-bold text-xs text-gray-800">Recent Transaction</h4>
                         <span class="text-[9px] text-brandGreen font-semibold uppercase tracking-wider cursor-pointer">See all</span>
@@ -437,9 +437,9 @@
     </section>
 
     <!-- Why Choose Us (Unchanged functionality) -->
-    <section class="py-24 px-6 max-w-7xl mx-auto text-center mt-10">
+    <section class="py-8 lg:py-12 px-6 max-w-7xl mx-auto text-center">
         <p class="text-gray-500 text-sm mb-2 font-semibold uppercase tracking-wider" data-aos="fade-up">Why choose us</p>
-        <h2 class="text-4xl lg:text-5xl font-bold max-w-2xl mx-auto leading-tight mb-20" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-4xl lg:text-5xl font-bold max-w-2xl mx-auto leading-tight mb-10 lg:mb-12" data-aos="fade-up" data-aos-delay="100">
             Why stackly is the best <br/>
             <span class="underline decoration-brandOrange decoration-4 underline-offset-4">choice</span> for your company
         </h2>
@@ -504,7 +504,7 @@
     <!-- Remaining sections kept same (Dark Tabs, Testimonials, FAQ, Blog, Footer) -->
     
     <!-- Dark Features Tab Section -->
-    <section class="py-24 bg-darkSection text-white mt-10 w-full overflow-hidden">
+    <section class="py-8 lg:py-12 bg-darkSection text-white mt-10 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12" data-aos="fade-up">
                 <p class="text-gray-400 text-sm mb-2 font-semibold">Features</p>
@@ -519,7 +519,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col lg:flex-row gap-16 items-center pt-8">
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center pt-8">
                 <!-- LEFT CONTENT SIDE (Now changes based on tabs) -->
                 <div class="lg:w-1/2 relative min-h-[300px] w-full" data-aos="fade-right">
                     
@@ -565,7 +565,7 @@
 
                 <!-- RIGHT CONTENT SIDE (Graphs) -->
                 <div class="lg:w-1/2 w-full" data-aos="fade-left">
-                    <div class="bg-white text-gray-900 rounded-3xl p-8 shadow-2xl relative min-h-[400px]">
+                    <div class="bg-white text-gray-900 rounded-3xl p-8 shadow-2xl relative min-h-[420px]">
                         
                         <!-- Spendings Right -->
                         <div id="spendings-right" class="tab-content-right active transition-opacity duration-500 absolute top-8 left-8 right-8">
@@ -610,7 +610,7 @@
     </section>
 
     <!-- Testimonials (Interactive Slider) -->
-    <section class="py-24 px-6 max-w-7xl mx-auto bg-white relative">
+    <section class="py-8 lg:py-12 px-6 max-w-7xl mx-auto bg-white relative">
         <div class="mb-12 text-center lg:text-left" data-aos="fade-up">
             <p class="text-gray-500 text-sm mb-2 font-semibold tracking-wide">Testimonials</p>
             <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
@@ -618,7 +618,7 @@
             </h2>
         </div>
 
-        <div class="relative overflow-hidden bg-gray-50 rounded-[2.5rem] h-[650px] sm:h-[550px] lg:h-[450px]" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative overflow-hidden bg-gray-50 rounded-[2.5rem] h-[500px] sm:h-[450px] lg:h-[400px]" data-aos="fade-up" data-aos-delay="100">
             <!-- Navigation arrows absolute positioned -->
             <div class="absolute bottom-8 left-8 lg:bottom-12 lg:left-12 z-30 flex gap-4">
                 <button id="test-prev" class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-gray-900 shadow-md border border-gray-100 transition-colors"><i class="fa-solid fa-arrow-left"></i></button>
@@ -626,43 +626,43 @@
             </div>
 
             <!-- Slide 1: Sophia Sanders (Co-founder) -->
-            <div class="testimonial-slide absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-8 lg:p-16 transition-opacity duration-300">
-                <div class="w-full lg:w-[55%] z-20 pb-20 lg:pb-12">
+            <div class="testimonial-slide absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-6 lg:p-10 transition-opacity duration-300">
+                <div class="w-full lg:w-[55%] z-20 pb-10 lg:pb-10 lg:pb-12 lg:pb-12">
                     <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10 font-medium">
                         "Our company's rapid growth demanded a fintech solution that could keep up. Digixy has been the answer. Their comprehensive fintech services helped us manage our financial operations with ease."
                     </p>
                     <h4 class="font-bold text-gray-900 text-lg">Sophia Sanders</h4>
                     <p class="text-gray-500 text-sm">Co-founder</p>
                 </div>
-                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-16 lg:pb-0">
+                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-10 lg:pb-12 lg:pb-0">
                     <img src="assets/images/photo-1573496359142-b8d87734a5a2.webp" class="h-full w-full lg:w-auto object-cover rounded-3xl lg:rounded-none lg:rounded-tl-full mix-blend-multiply" alt="Sophia Sanders">
                 </div>
             </div>
 
             <!-- Slide 2: Michael Chen (CEO) -->
-            <div class="testimonial-slide hidden opacity-0 absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-8 lg:p-16 transition-opacity duration-300">
-                <div class="w-full lg:w-[55%] z-20 pb-20 lg:pb-12">
+            <div class="testimonial-slide hidden opacity-0 absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-6 lg:p-10 transition-opacity duration-300">
+                <div class="w-full lg:w-[55%] z-20 pb-10 lg:pb-10 lg:pb-12 lg:pb-12">
                     <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10 font-medium">
                         "stackly has completely transformed how we handle our corporate expenses. The real-time reporting is an absolute game changer for our executive board meetings."
                     </p>
                     <h4 class="font-bold text-gray-900 text-lg">Michael Chen</h4>
                     <p class="text-gray-500 text-sm">CEO</p>
                 </div>
-                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-16 lg:pb-0">
+                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-10 lg:pb-12 lg:pb-0">
                     <img src="assets/images/photo-1560250097-0b93528c311a.webp" class="h-full w-full lg:w-auto object-cover rounded-3xl lg:rounded-none lg:rounded-tl-full mix-blend-multiply" alt="Michael Chen">
                 </div>
             </div>
 
             <!-- Slide 3: Sarah Jenkins (Finance Officer) -->
-            <div class="testimonial-slide hidden opacity-0 absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-8 lg:p-16 transition-opacity duration-300">
-                <div class="w-full lg:w-[55%] z-20 pb-20 lg:pb-12">
+            <div class="testimonial-slide hidden opacity-0 absolute inset-0 flex flex-col lg:flex-row items-center lg:gap-12 p-6 lg:p-10 transition-opacity duration-300">
+                <div class="w-full lg:w-[55%] z-20 pb-10 lg:pb-10 lg:pb-12 lg:pb-12">
                     <p class="text-gray-600 text-lg lg:text-xl leading-relaxed mb-6 lg:mb-10 font-medium">
                         "As a finance officer, accuracy and security are my top priorities. The seamless integration with our existing banking structure makes my day-to-day operations flawless."
                     </p>
                     <h4 class="font-bold text-gray-900 text-lg">Sarah Jenkins</h4>
                     <p class="text-gray-500 text-sm">Finance Officer</p>
                 </div>
-                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-16 lg:pb-0">
+                <div class="w-full lg:w-[45%] flex-1 lg:h-full flex justify-center lg:justify-end items-center lg:items-end relative lg:absolute lg:right-0 lg:bottom-0 z-0 mt-6 lg:mt-0 pb-10 lg:pb-12 lg:pb-0">
                     <img src="assets/images/photo-1580489944761-15a19d654956.webp" class="h-full w-full lg:w-auto object-cover rounded-3xl lg:rounded-none lg:rounded-tl-full mix-blend-multiply" alt="Sarah Jenkins">
                 </div>
             </div>
@@ -670,7 +670,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-24 px-6 max-w-4xl mx-auto bg-white text-center">
+    <section class="py-8 lg:py-12 px-6 max-w-4xl mx-auto bg-white text-center">
         <p class="text-gray-500 text-sm mb-2 font-semibold">Frequently asked questions</p>
         <h2 class="text-4xl lg:text-5xl font-bold leading-tight mb-16">
             Learn more about our platform <br/> by exploring these <span class="underline decoration-brandOrange decoration-4 underline-offset-4">questions</span>
@@ -705,7 +705,7 @@
     </section>
 
     <!-- Blog Section -->
-    <section class="pt-24 pb-48 px-6 max-w-7xl mx-auto bg-white">
+    <section class="pt-8 lg:pt-12 pb-12 lg:pb-10 lg:pb-10 lg:pb-12 px-6 max-w-7xl mx-auto bg-white">
         <div class="flex flex-col lg:flex-row justify-between items-end mb-12" data-aos="fade-up">
             <div>
                 <p class="text-gray-500 text-sm mb-2 font-semibold">Recent articles</p>
@@ -744,7 +744,7 @@
     </section>
 
     <!-- Footer + CTA overlapping -->
-    <div class="relative mt-24">
+    <div class="relative mt-48 lg:mt-56">
         <div class="absolute left-6 right-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 top-0 -translate-y-1/2 z-20 max-w-5xl lg:w-full">
             <div class="bg-brandGreen rounded-[2rem] p-6 md:p-12 text-center text-white shadow-2xl relative overflow-hidden" data-aos="zoom-in">
                 <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
@@ -757,9 +757,9 @@
             </div>
         </div>
 
-        <footer class="bg-darkSection text-white pt-56 pb-12 px-6 lg:px-10">
+        <footer class="bg-darkSection text-white pt-40 lg:pt-48 pb-12 px-6 lg:px-10">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-16 text-center md:text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-10 lg:pb-12 text-center md:text-left">
                     
                     <!-- Col 1: Brand -->
                     <div class="lg:col-span-6 bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col items-center md:items-start">

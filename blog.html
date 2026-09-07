@@ -60,18 +60,18 @@
     <div class="h-[76px] w-full"></div>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex-col items-center pt-28 pb-10 gap-6 justify-start text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
-        <a href="index.html" class="hover:text-brandGreen mobile-link">Home</a>
-        <a href="about.html" class="hover:text-brandGreen mobile-link">About Us</a>
-        <a href="blog.html" class="hover:text-brandGreen mobile-link">Blog</a>
-        <a href="services.html" class="hover:text-brandGreen mobile-link">Services</a>
-        <a href="contact.html" class="hover:text-brandGreen mobile-link">Contact Us</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[55] flex flex-col items-center pt-28 pb-10 gap-6 justify-start text-xl font-medium opacity-0 pointer-events-none transition-all duration-300 hidden overflow-y-auto" style="display: none;">
+        <a href="index.html" class="text-red-500 hover:text-brandGreen mobile-link">Home</a>
+        <a href="about.html" class="text-red-500 hover:text-brandGreen mobile-link">About Us</a>
+        <a href="blog.html" class="text-red-500 hover:text-brandGreen mobile-link">Blog</a>
+        <a href="services.html" class="text-red-500 hover:text-brandGreen mobile-link">Services</a>
+        <a href="contact.html" class="text-red-500 hover:text-brandGreen mobile-link">Contact Us</a>
         <button class="bg-brandGreen text-white px-10 py-3.5 rounded-full font-bold shadow-lg shadow-brandGreen/30 mt-4 text-lg w-3/4 max-w-xs" onclick="window.location.href='login.html'">Login</button>
     </div>
 
 
     <!-- Blog Hero -->
-    <section class="py-24 px-6 max-w-4xl mx-auto text-center border-b border-gray-100">
+    <section class="py-8 lg:py-12 px-6 max-w-4xl mx-auto text-center border-b border-gray-100">
         <p class="text-gray-500 text-sm mb-4 font-semibold" data-aos="fade-up">Blog</p>
         <h1 class="text-5xl lg:text-6xl font-bold leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
             The power of <span class="underline decoration-brandOrange decoration-4 underline-offset-4">financial</span> forecasting for business success
@@ -89,7 +89,7 @@
     </section>
 
     <!-- Featured Post -->
-    <section class="py-24 px-6 max-w-7xl mx-auto">
+    <section class="py-8 lg:py-12 px-6 max-w-7xl mx-auto">
         <div class="flex flex-col lg:flex-row gap-12 items-center cursor-pointer group">
             <div class="lg:w-1/2 w-full" data-aos="fade-right">
                 <div class="rounded-3xl overflow-hidden h-[400px] shadow-lg">
@@ -117,7 +117,7 @@
     </section>
 
     <!-- Latest Articles Grid -->
-    <section class="pt-12 pb-48 px-6 max-w-7xl mx-auto">
+    <section class="pt-12 pb-12 lg:pb-10 lg:pb-10 lg:pb-12 px-6 max-w-7xl mx-auto">
         <h2 class="text-4xl font-bold mb-12 text-gray-900" data-aos="fade-up">Latest articles</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
@@ -210,7 +210,7 @@
     </section>
 
     <!-- Footer + CTA overlapping (Copied exactly from index.html) -->
-    <div class="relative mt-24">
+    <div class="relative mt-8 lg:mt-12">
         <!-- CTA Banner -->
         <div class="absolute left-6 right-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 top-0 -translate-y-1/2 z-20 max-w-5xl lg:w-full">
             <div class="bg-brandGreen rounded-[2rem] p-6 md:p-12 text-center text-white shadow-2xl relative overflow-hidden" data-aos="zoom-in">
@@ -233,9 +233,9 @@
         </div>
 
         <!-- Dark Footer -->
-        <footer class="bg-darkSection text-white pt-56 pb-12 px-6 lg:px-10">
+        <footer class="bg-darkSection text-white pt-40 lg:pt-48 pb-12 px-6 lg:px-10">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-16 text-center md:text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-10 lg:pb-12 text-center md:text-left">
                     
                     <!-- Col 1: Brand -->
                     <div class="lg:col-span-6 bg-white/5 p-8 rounded-2xl border border-white/10 flex flex-col items-center md:items-start">
